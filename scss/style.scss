@@ -1,0 +1,9 @@
+@import "settings";
+@import "foundation";
+
+.custom-row-class {
+  @include grid-row();
+  .custom-column-class {
+    @include grid-column(12);
+  }
+}
