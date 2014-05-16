@@ -1,0 +1,94 @@
+@import 'mixins';
+
+::selection {
+}
+
+
+/* Responsive Images, Video  */
+
+img {
+  -ms-interpolation-mode: bicubic;
+  border: 0;
+  height: auto;
+  max-width: 100%;
+  vertical-align: middle;
+}
+
+video {
+  width: 100%;
+  max-width: 100%;
+  height: auto;
+}
+
+* { 
+  margin: 0; 
+  padding: 0; 
+  @include vendor-prefix(box-sizing, border-box);
+}
+
+body { 
+  background: white; 
+  font-family: 'Merriweather Sans', sans-serif; 
+}
+
+.screen-reader-text { 
+  position: absolute; 
+  left: -9999px; 
+  top: -9999px; 
+}
+
+.clear { clear: both; }
+
+.group:after { visibility: hidden; display: block; font-size: 0; content: " "; clear: both; height: 0; }
+
+* html .group, *:first-child+html .group { zoom: 1; } /* First selector = IE6, Second Selector = IE 7 */
+
+
+
+/* Typography  */
+
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, p a {
+  line-height: 1.0rem;
+  word-wrap: break-word;
+  font-weight: 100;
+  text-decoration: none;
+}
+
+h1 {
+  font-size: 2.625rem; /* = 42px */
+  font-weight: 100;
+  line-height: 3.5rem;
+}
+
+h2 {
+  font-size: 2.250rem; /* = 36px */ 
+}
+
+h3 {
+  font-size: 1.875rem; /* = 30px */
+}
+
+h4 {
+  font-size: 1.500rem; /* = 24px */
+  font-weight: 100;
+}
+
+h5 {
+  font-size: 1.125rem; /* = 18px */
+  font-weight: 400;
+  
+}
+
+h6 {
+	font-size: 1.000rem; /* = 16px */
+}
+
+p {
+	font-size: 1.000rem;
+	font-weight: 300;
+	color: white;
+	margin-bottom: 2rem;
+}
+
+
+
