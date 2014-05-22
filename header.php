@@ -23,11 +23,13 @@
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="logo">
-			<h1 class="site-title"><a href="<?php echo esc_url( home_url( '/' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<div class="logo-icon"></div>
+			<div class="logo-text"></div>
 		</div>
+		<div class="search"></div>
 
-		<nav id="site-navigation" class="main-navigation" role="navigation">
-				
+		<nav id="nav" class="navigation" role="navigation">
+			<?php wp_nav_menu(array('menu'=>'main nav')); ?>
 		</nav><!-- #site-navigation -->
 	</header><!-- #masthead -->
 
