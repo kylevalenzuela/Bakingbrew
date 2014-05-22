@@ -11,11 +11,20 @@
 	</div><!-- #content -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="footer-social">
+			<h3>Social</h3>
+			<ul class="social-list">
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+				<li></li>
+			</ul>
+		</div>
 		<div class="site-info">
-			<a href="<?php echo esc_url( __( 'http://wordpress.org/', 'baking-brew' ) ); ?>"><?php printf( __( 'Proudly powered by %s', 'baking-brew' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-			<?php printf( __( 'Theme: %1$s by %2$s.', 'baking-brew' ), 'Baking Brew', '<a href="http://underscores.me/" rel="designer">Underscores.me</a>' ); ?>
-		</div><!-- .site-info -->
+			@<?php the_time('Y') ?> BakingBrew is a an awesome site built on Wordpress.
+		</div><!-- .site-info --> 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
