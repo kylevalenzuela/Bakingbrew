@@ -1,6 +1,8 @@
 
 
-
+/*
+GENERIC VENDOR PREFIX 
+*/
 @mixin vendor-prefix($name, $argument) {
   -webkit-#{$name}: #{$argument};
   -ms-#{$name}: #{$argument};
@@ -8,3 +10,61 @@
   -o-#{$name}: #{$argument};
   #{$name}: #{$argument};
 }
+
+/*
+SIMPLE BLOCK GRID (from css-tricks.com)
+*/
+@mixin rowMachine($numPerRow, $margin) {
+  width: ((100% - (($numPerRow - 1) * $margin)) / $numPerRow);
+  &:nth-child(n) {
+    margin-right: $margin;
+  }
+  &:nth-child(#{$numPerRow}n) {
+    margin-right: 0;
+  }
+  &:nth-child(#{$numPerRow}n+1) {
+    clear: left;
+  }
+}
+
+/*
+UNEVEN GRID FUNCTION
+*/
+
+$columns: 12;
+$gutter: 2%;
+
+@function grid-width($cols, $has-gutter:false) {
+  
+    @if $has-gutter {
+      @return calc(((100% / #{$columns}) * #{$cols}) - #{$gutter});  
+    }
+    @else {
+      @return calc((100% / #{$columns}) * #{$cols});
+    }
+}
+
+/*
+GENERIC  TRANSITION
+*/
+@mixin transition($time){
+   -webkit-transition: all ease-out #{$time};
+    -moz-transition: all ease-out #{$time};
+    -o-transition: all ease-out #{$time};
+    transition: all ease-out #{$time};
+}
+
+/*
+CLEARFIX MIXIN
+*/
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+
+
+
+
