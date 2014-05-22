@@ -18,3 +18,144 @@ Tags: responsive, beer, beer, orange
 @import 'global';
 
 
+/*
+NAVIGATION
+*/
+
+header {
+	position:relative;
+	width:100%;
+	height: auto;
+	padding: 2%;
+}
+.logo {
+	@include rowMachine(1, 0);
+	height: 7rem;
+	background: $grey;
+}
+
+nav {
+	width: inherit;
+	height: auto;
+	@include clearfix();
+	ul {}
+	li { 
+		@include rowMachine(3, 2%);
+		position: relative;
+		float:left;
+		list-style:none;
+		padding: 2%;
+		text-align:center;
+		border: $orange solid 1px;
+		@include transition(.3s);
+		&:hover, &:active {
+			border: $brown solid 1px;
+		}
+		a {
+			@include transition(.3s);
+			&:hover, &:active  {
+				color: $brown;
+			}
+		}
+	}
+}
+.menu-main-nav-container {
+}
+
+/************************
+HOME PAGE
+************************/
+
+/*
+Main Article
+*/
+
+.main-recipe {
+	height:auto;
+	width: 100%;
+	position:relative;
+}
+
+.main-recipe-img {
+	width:inherit;
+	height:20rem;
+	background: darkblue;
+	position:relative;
+}
+	
+.main-recipe-block {
+	position:absolute;
+	width:100%;
+	height:auto;
+	bottom: 0;
+	left:0;
+	background:$lightlay;
+	padding: 2%;
+}
+
+/*
+Recent Articles 
+*/
+
+.recent-recipe{
+	width: 100%;
+	padding: 2%;
+}
+
+.recent-recipe-block{
+	border-bottom: $orange 1px solid;
+	@include clearfix();
+	width: 100%;
+	height:auto;
+	padding: 4% 0;
+}
+
+.recent-recipe-article{
+	width: grid-width(8, true);
+	float:left;
+}
+
+.recent-recipe-img{
+	width: grid-width(4);
+	max-height:100%;
+	max-width:100%;
+	background: url('http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/IMG_20140426_154227.jpg') no-repeat center;
+	float:right;
+}
+
+/************************
+FOOTER
+************************/
+
+footer {
+	width: 100%;
+	height: auto;
+	background: $orange;
+	border-top: $darkorange 3px solid;
+}
+.footer-social {
+	padding: 2%;
+
+
+	h3 {
+		color: $darkorange;
+		margin-bottom:2%;
+	}
+	ul {
+		font-size: 0;
+		@include clearfix();
+	}
+	li{
+		@include rowMachine(3, 2%);
+		height: 3rem;
+		background: $darklay;
+		border: $darkorange 3px solid;
+		float:left;
+		margin-bottom: 2%;
+	}
+}
+
+.site-info {
+	text-align:center;
+	color:white;
+}
