@@ -1,6 +1,9 @@
 @import 'mixins';
+@import 'variables';
 
 ::selection {
+  background: $orange;
+  color: white;
 }
 
 
@@ -27,8 +30,6 @@ video {
 }
 
 body { 
-  background: white; 
-  font-family: 'Merriweather Sans', sans-serif; 
 }
 
 .screen-reader-text { 
@@ -47,48 +48,76 @@ body {
 
 /* Typography  */
 
-h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, p a {
-  line-height: 1.0rem;
+
+@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, p a, li, li a, blockquote, pre, strong{
   word-wrap: break-word;
-  font-weight: 100;
+  font-weight: 300;
   text-decoration: none;
-}
+  font-family: 'Lato', sans-serif;
+  color: $orange;
+} 
+
 
 h1 {
   font-size: 2.625rem; /* = 42px */
-  font-weight: 100;
-  line-height: 3.5rem;
+  font-weight: 300;
+  line-height: 2.625rem;
 }
 
 h2 {
   font-size: 2.250rem; /* = 36px */ 
+  font-weight: 300;
+  line-height: 2.250rem;
 }
 
 h3 {
   font-size: 1.875rem; /* = 30px */
+  font-weight: 400;
+  line-height: 1.875rem;
+  margin-bottom:.5rem;
 }
 
 h4 {
   font-size: 1.500rem; /* = 24px */
-  font-weight: 100;
+  font-weight: 300;
+  line-height: 1.500rem;
 }
 
 h5 {
   font-size: 1.125rem; /* = 18px */
   font-weight: 400;
-  
+  line-height: 1.125rem;
 }
 
 h6 {
 	font-size: 1.000rem; /* = 16px */
+  font-weight: 300; 
+  font-size: 1.000rem;
 }
 
 p {
 	font-size: 1.000rem;
 	font-weight: 300;
-	color: white;
+	color: $brown;
 	margin-bottom: 2rem;
 }
 
+blockquote {
+  font-size: 1.875rem; /* = 30px */
+  font-weight: 100;
+  line-height: 1.875rem;
+  color: $orange;
+  border-top: 2px solid $brown;
+  border-bottom: 2px solid $brown;
+}
 
+/* The Cellar Module */
+.cellar-info-module  {
+  color: $brown;
+  font-size: 1.500rem; /* = 24px */
+  font-weight: 100;
+  line-height: 1.500rem;
 
+}
