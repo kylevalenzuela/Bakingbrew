@@ -78,7 +78,7 @@ Main Article
 
 .main-recipe-img {
 	width:inherit;
-	height:20rem;
+	height:auto;
 	background: darkblue;
 	position:relative;
 }
@@ -89,7 +89,7 @@ Main Article
 	height:auto;
 	bottom: 0;
 	left:0;
-	background:$lightlay;
+	background:$darklay;
 	padding: 2%;
 }
 
@@ -100,6 +100,7 @@ Recent Articles
 .recent-recipe{
 	width: 100%;
 	padding: 2%;
+	@include border(5px);
 }
 
 .recent-recipe-block{
@@ -108,6 +109,9 @@ Recent Articles
 	width: 100%;
 	height:auto;
 	padding: 4% 0;
+	&:last-child{
+		border-bottom:none;
+	}
 }
 
 .recent-recipe-article{
@@ -117,11 +121,42 @@ Recent Articles
 
 .recent-recipe-img{
 	width: grid-width(4);
-	max-height:100%;
-	max-width:100%;
-	background: url('http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/IMG_20140426_154227.jpg') no-repeat center;
+	height: auto;
 	float:right;
+
+	img {
+		width:100%;
+		max-width:100%;
+	}
 }
+
+/*
+cellar slider
+*/
+.home-cellar {
+	h1{
+		width:100%;
+		text-align: center;
+		margin-top: 2%;
+	}
+}
+.home-cellar-slider {
+		overflow:hidden;
+		.content {
+			position:relative;
+		}
+		.page{
+			float:left;
+			width:100%;
+			height:4rem;
+			background: tomato;
+		}
+}
+.page {
+	display:inline-block;
+	width: 100%;
+}
+
 
 /************************
 FOOTER
