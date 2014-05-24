@@ -65,6 +65,13 @@ CLEARFIX MIXIN
   }
 }
 
+/*
+CLEARFIX MIXIN
+*/
+@mixin border($thickness){
+  border-bottom: $orange solid #{$thickness};
+
+}
 
 
 
