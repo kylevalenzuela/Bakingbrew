@@ -1,6 +1,7 @@
 // Include gulp
 var gulp = require('gulp');
 
+// Include Plugins
 var jshint = require('gulp-jshint');
 var sass = require('gulp-sass');
 var concat = require('gulp-concat');
@@ -29,6 +30,7 @@ gulp.task('sass', function() {
         .pipe(minifycss())
         .pipe(gulp.dest('css'))
         .pipe(minifycss())
+        .pipe(sass({errLogToConsole: true}))
         .pipe(gulp.dest('./'));
 
 
