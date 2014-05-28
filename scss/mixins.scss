@@ -66,12 +66,17 @@ CLEARFIX MIXIN
 }
 
 /*
-CLEARFIX MIXIN
+BORDER MIXIN
 */
 @mixin border($thickness){
   border-bottom: $orange solid #{$thickness};
 
 }
+
+/*
+ANIMATION SETTINGS
+*/
+
 
 
 
