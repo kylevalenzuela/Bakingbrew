@@ -113,6 +113,20 @@ blockquote {
   border-bottom: 2px solid $brown;
 }
 
+aside {
+  display:none;
+}
+
+.page-wrap {
+  max-width:960px;
+  margin: 0 auto;
+}
+
+.f-wrap {
+  max-width:960px;
+  margin: 0 auto;
+}
+
 /* The Cellar Module */
 .cellar-info-module  {
   color: $brown;
