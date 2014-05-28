@@ -1,0 +1,54 @@
+@import 'variables';
+@import 'mixins';
+@import 'global';
+
+
+@media screen and (min-width: 625px) {
+	
+
+	.main-recipe-img {
+		width:100%;
+		img {
+			max-width:100%;
+		}
+	}
+
+	.main-recipe {
+		@include rowMachine(2, 2%);
+		float:left;
+	}
+	.recent-recipe {
+		@include rowMachine(2, 2%);
+		float:right;
+	}
+	
+
+	.recent-recipe {
+		padding:0;
+
+		&:first-child {
+			padding-bottom: 4%;
+		}
+	}
+
+	.recent-recipe-block:first-child {
+		padding: 0;
+		padding-bottom: 4%;
+	}
+}
+
+@media screen and (min-width: 960px) {
+	.two-thirds {
+		width: grid-width(8, true);
+		float:left;
+	}
+	.one-third {
+		display: inline;
+		width: grid-width(4, true);
+		height: 600px;
+		background: tomato;
+		float:right;
+	}
+}
+
+
