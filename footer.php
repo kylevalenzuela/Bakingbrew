@@ -7,24 +7,24 @@
  * @package Baking Brew
  */
 ?>
-
-	</div><!-- #content -->
-
+	</div><!-- .page-wrap -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="footer-social">
-			<h3>Social</h3>
-			<ul class="social-list">
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-				<li></li>
-			</ul>
-		</div>
-		<div class="site-info">
-			@<?php the_time('Y') ?> BakingBrew is a an awesome site built on Wordpress.
-		</div><!-- .site-info --> 
+		<div class="f-wrap">
+			<div class="footer-social">
+				<h3>Social</h3>
+				<ul class="social-list">
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+					<li></li>
+				</ul>
+			</div>
+			<div class="site-info">
+				@<?php the_time('Y') ?> BakingBrew is a an awesome site built on Wordpress.
+			</div><!-- .site-info --> 
+		</div><!-- .f-wrap --> 
 	</footer><!-- #colophon -->
 </div><!-- #page -->
 
