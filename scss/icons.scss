@@ -1,0 +1,142 @@
+
+
+@import 'variables';
+@import 'mixins';
+
+
+$wheatstock: url(icons/wheatstock.svg) no-repeat top left;
+
+.wheatstock {
+	display:none;
+	@media screen and (min-width:960px){
+		line-height: 1.125rem;
+		@include rowMachine(3, 1%);
+		fill:$orange;	
+		display: inline;
+		float:left;
+		height:100%;
+	}
+}
+
+.wheat-rotate{
+	-webkit-transform: rotate(0deg);
+	@include transition(.3s);
+	&:hover {
+    	
+	}
+}
+
+@mixin wheatkeyframe($animation-name) {
+	@-webkit-keyframes #{$animation-name} {
+  		0%    { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		25%  { 
+  				-webkit-transform: rotate(-10deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+		50%    { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		75%  { 
+  				-webkit-transform: rotate(-10deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		100%  { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+	}
+	@-moz-keyframes #{$animation-name} {
+  		0%    { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		50%  { 
+  				-webkit-transform: rotate(-10deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		100%  { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+	}
+	@-o-keyframes #{$animation-name} {
+  		0%    { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		50%  { 
+  				-webkit-transform: rotate(-10deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		100%  { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+	}
+	@keyframes #{$animation-name} {
+  		0%    { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		50%  { 
+  				-webkit-transform: rotate(-10deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+  		100%  { 
+  				-webkit-transform: rotate(0deg);
+			 	-webkit-transform-origin: bottom right; 
+			}
+	}
+}
+
+
+@-webkit-keyframes wheat-animation {
+	0%    { 
+			-webkit-transform: rotate(0deg);
+	 	-webkit-transform-origin: bottom left; 
+	}
+	25%  { 
+			-webkit-transform: rotate(-10deg);
+	 	-webkit-transform-origin: bottom left; 
+	}
+	50%    { 
+			-webkit-transform: rotate(0deg);
+	 	-webkit-transform-origin: bottom left; 
+	}
+	75%  { 
+			-webkit-transform: rotate(-10deg);
+	 	-webkit-transform-origin: bottom left; 
+	}
+	100%  { 
+			-webkit-transform: rotate(0deg);
+	 	-webkit-transform-origin: bottom left; 
+	}
+}
+
+@-webkit-keyframes wheat-animation-r {
+	0%    { 
+			-webkit-transform: rotate(0deg);
+	 	-webkit-transform-origin: bottom right; 
+	}
+	25%  { 
+			-webkit-transform: rotate(10deg);
+	 	-webkit-transform-origin: bottom right; 
+	}
+	50%    { 
+			-webkit-transform: rotate(0deg);
+	 	-webkit-transform-origin: bottom right; 
+	}
+	75%  { 
+			-webkit-transform: rotate(10deg);
+	 	-webkit-transform-origin: bottom right; 
+	}
+	100%  { 
+			-webkit-transform: rotate(0deg);
+	 	-webkit-transform-origin: bottom right; 
+	}
+}
+
