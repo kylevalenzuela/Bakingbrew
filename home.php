@@ -116,11 +116,9 @@ get_header(); ?>
 	</article>
 </div><!--two-thirds width-->
 
-<aside class="one-third">
-	
-</aside>
 
 
 
 
+<?php get_sidebar(); ?>
 <?php get_footer(); ?>
