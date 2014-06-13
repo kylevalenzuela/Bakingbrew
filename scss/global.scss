@@ -11,30 +11,33 @@ DEFAULT FORM PLACEHOLDER STYLES
 */
 
 ::-webkit-input-placeholder {
-   color: $orange;
+   color: $darkorange;
    &:focus {
-    color:$brown;
+    color:$orange;
    }
+   &:hover {
+    color:$orange;
+  }
 }
 
 :-moz-placeholder { /* Firefox 18- */
-   color: $orange;  
-   &:focus {
-    color:$brown;
+  color: $darkorange;
+  &:focus {
+    color:$orange;
    }
 }
 
 ::-moz-placeholder {  /* Firefox 19+ */
-   color: $orange;  
-   &:focus {
-    color:$brown;
+    color: $darkorange;
+    &:focus {
+     color:$orange;
    }
 }
 
 :-ms-input-placeholder {  
-   color: $orange;  
-   &:focus {
-    color:$brown;
+    color: $darkorange;
+    &:focus {
+      color:$orange;
    }
 }
 
@@ -154,18 +157,17 @@ blockquote {
   }
 }
 
-
 .one-third {
   display:none;
 }
 
 .page-wrap {
-  max-width:960px;
+  max-width:$high-end;
   margin: 0 auto;
 }
 
 .f-wrap {
-  max-width:960px;
+  max-width:$high-end;
   margin: 0 auto;
 }
 
@@ -199,8 +201,12 @@ blockquote {
   @extend h6;
 }
 
+/*Search Form Styles */
+
 .search-form {
-  @include clearfix();
+  width: grid-width(10);
+  float:right;
+
 }
 
 .search-field {
@@ -210,18 +216,24 @@ blockquote {
   text-align: left;
   background: transparent;
   border: none;
-  border-bottom:2px solid $orange;
+  border-bottom:none;
   border-radius: none;
   -webkit-appearance: none;
   font-size:1.4rem;
   color: $orange;
 
+  
+
   &:focus {
     outline:none;
-    border-bottom:2px solid $darkorange;
-    color: $darkorange;
+    border-bottom:2px solid $orange;
+    color: $orange;
+  }
+  &:focus .search-icon{
+    fill: $darkorange;
   }
 }
+
 
 .search-submit {
   display:none;
