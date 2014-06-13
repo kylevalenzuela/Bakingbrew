@@ -19,23 +19,43 @@ Tags: responsive, beer, beer, orange
 NAVIGATION
 */
 
-header {
+header.site-header {
 	position:relative;
 	width:100%;
 	height: auto;
-	padding: 2% 1%;
-	max-width: 960px;
+	padding: 1%;
 	margin: 0 auto;
+	background:$brown;
+	border-bottom:4px $orange solid;
 }
 .logo {
 	@include rowMachine(1, 0);
 	height: 7rem;
+	max-width: $high-end;
 }
 
-.search {
-	@include rowMachine(3, 0);
-	margin-bottom: 1rem;
+.head-wrap {
+	@media screen and (min-width: $max-breakpoint){
+		max-width: $high-end;
+		width:100%;
+		height: auto;
+		margin: 0 auto;
+		@include clearfix();
+	}
 }
+
+.search-bar {
+	margin-bottom: 1rem;
+	float:left;
+	@include clearfix();
+
+	@media screen and (min-width:$max-breakpoint){
+ 		padding-top: 4%;
+ 		margin-bottom: 0;
+ 		width:grid-width(3, 2);
+	}
+}
+
 
 nav.navigation {
 	width: inherit;
@@ -52,25 +72,29 @@ nav.navigation {
 		border: $orange solid 1px;
 		@include transition(.3s);
 		@include clearfix();
-		@media screen and (min-width: 960px){
+		@media screen and (min-width: $max-breakpoint){
 			border:none;
 			font-size: 1.125rem;
-			padding: 5% auto;
+			padding: 0;
 		}
 
-		&:hover .wheat-rotate {
+		&:hover .wheat-rotate,
+		&:active .wheat-rotate {
 			-webkit-animation-delay: 0;
 		    -webkit-animation-duration: .7s;
 		    -webkit-animation-name: wheat-animation;
 		    -webkit-animation-fill-mode: forwards;
+		    @include transition(.3s);
 		}
-		&:hover .wheat-rotate-r {
+		&:hover .wheat-rotate-r, 
+		&:active .wheat-rotate-r {
 			-webkit-animation-delay: 0;
 		    -webkit-animation-duration: .7s;
 		    -webkit-animation-name: wheat-animation-r;
 		    -webkit-animation-fill-mode: forwards;
+		    @include transition(.3s);
 		}
-		
+
 		a {
 			@include transition(.3s);
 		}
@@ -79,18 +103,24 @@ nav.navigation {
 			border-color: $darkorange;
 		}
 		&:hover .nav-text, 
-		&:focus .nav-text,
-		&:focus a.wheatstock,
-		&:hover a.wheatstock {
+		&:focus .nav-text {
 			color:$darkorange;
+			@media screen and (min-width:$max-breakpoint) {
+				color: $orange;
+			}
 		}
 	}
-	
+	@media screen and (min-width:$max-breakpoint){
+		width: grid-width(9);
+		float: right;
+	}	
 }
+
 .nav-text {
 	font-weight:200;
 	margin-bottom:0; 
-	@media screen and (min-width:960px){
+	@include transition(.3s);
+	@media screen and (min-width:$max-breakpoint){
 		font-weight:200;
 		@include rowMachine(3, 1%);
 		margin-top:8%; 
@@ -291,23 +321,58 @@ Home Cellar Content
 RECIPES
 ************************/
 
+//fixed image banner
 .entry-header {
-  width: 100%;
+  max-width:none;
+  width:100%;
+  overflow-x:visible;
+  height: 10rem;
   margin: 0 auto;
+  padding:5%;
   @include clearfix();
+  background-size:cover!important;
+  background-attachment: scroll;
+  background-attachment: fixed!important;
+  border-bottom: $orange 4px solid;
+
+  overflow: hidden;
+  @media screen and (min-width:600px){
+  	background-position: 120 left!important;
+  	background-size: 169% !important;
+  }
+
+  @media screen and (min-width:$max-breakpoint){
+  	padding:2%;
+  	background-position: top left!important;
+  	background-size: 100%!important;
+  }
+
 }
 
+.head-wrapper {
+	position:relative;
+	max-width: $high-end;
+	margin: 0 auto;
+	-webkit-overflow-scrolling: touch;
+
+}
+//Title 
 .entry-title {
+  position: relative;		
   width: grid-width(10);
-  float:right;
-  @media screen and (min-width: 960px){
-    font-size: 2.625rem;
-    line-height: 2.4rem;
+  font-size: 150%;
+  margin: 0 18%;
+  text-shadow: $text-shadow;
+  @media screen and (min-width: $max-breakpoint){
+    font-size: 2.925rem;
+    line-height: 2.8rem;
+    margin: 0 auto;
   }
 }
 
+// Main Content 
 .entry-content {
-	padding: 1%;
+	padding: 3%;
 	li {
   		font-size:1.250rem;
  		color: $grey;
@@ -320,7 +385,15 @@ RECIPES
  			list-style-position: outside;
  		}
  	}
+}
 
+.recipe-content {
+	width: 100%;
+	height: auto;
+	background: $orange;
+	h3 {
+		color: white;
+	}
 }
 
 
