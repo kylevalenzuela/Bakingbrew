@@ -105,6 +105,7 @@ h2 {
   font-size: 2.250rem; /* = 36px */ 
   font-weight: 300;
   line-height: 2.250rem;
+  margin-bottom:.5rem;
 }
 
 h3 {
@@ -131,6 +132,7 @@ h6 {
 	font-size: 1.000rem; /* = 16px */
   font-weight: 300; 
   font-size: 1.000rem;
+
 }
 
 p {
@@ -157,13 +159,46 @@ blockquote {
   }
 }
 
+/*
+SIDEBAR
+*/
+
 .one-third {
-  display:none;
+  width:100%;
+  padding:2%;
+  @media screen and (min-width: $max-breakpoint) {
+
+  }
+}
+//donation wrapper
+.coins {
+  width:100%;
+  @include clearfix();
+  max-width: 400px;
+  margin: 0 auto;
+}
+.dodgecoin-link {
+  @include rowMachine(2, 2%);
+  float:left;
+  .dodgecoin {
+    width:100%;
+    height:auto;
+  }
+}
+
+.bitcoin-link {
+  @include rowMachine(2, 2%);
+  float:left;
+  .bitcoin {
+    width:100%;
+    height:auto;
+  }
 }
 
 .page-wrap {
   max-width:$high-end;
   margin: 0 auto;
+  padding: 1% 0;
 }
 
 .f-wrap {
