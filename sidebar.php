@@ -5,28 +5,11 @@
  * @package Baking Brew
  */
 ?>
-	<div id="secondary" class="widget-area" role="complementary">
-		<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
-
-			<aside id="search" class="widget widget_search">
-				<?php get_search_form(); ?>
-			</aside>
-
-			<aside id="archives" class="widget">
-				<h1 class="widget-title"><?php _e( 'Archives', 'baking-brew' ); ?></h1>
-				<ul>
-					<?php wp_get_archives( array( 'type' => 'monthly' ) ); ?>
-				</ul>
-			</aside>
-
-			<aside id="meta" class="widget">
-				<h1 class="widget-title"><?php _e( 'Meta', 'baking-brew' ); ?></h1>
-				<ul>
-					<?php wp_register(); ?>
-					<li><?php wp_loginout(); ?></li>
-					<?php wp_meta(); ?>
-				</ul>
-			</aside>
-
-		<?php endif; // end sidebar widget area ?>
-	</div><!-- #secondary -->
+	<div id="secondary" class="one-third sidebar" role="complementary">
+	
+		<aside class="coins">
+			<a class="dodgecoin-link" href="dogecoin:DMq3PvhUz6b483fZCpxN3gnHXoaC8yEPUT"><?php include("icons/dodgecoin.svg"); ?></a>
+			<a class="bitcoin-link" href="bitcoin:1LccD3KqehoUNX6srKYms1YiVk8q1jFcgR"><?php include("icons/bitcoin.svg"); ?></a>
+		</aside>
+		
+	</div><!-- .one-third -->
