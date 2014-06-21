@@ -45,7 +45,6 @@ header.site-header {
 }
 
 .search-bar {
-	margin-bottom: 1rem;
 	float:left;
 	@include clearfix();
 
@@ -70,7 +69,7 @@ nav.navigation {
 		padding: 2%;
 		text-align:center;
 		border: $orange solid 1px;
-		@include transition(.3s);
+		@include transition(all, .3s);
 		@include clearfix();
 		@media screen and (min-width: $max-breakpoint){
 			border:none;
@@ -84,7 +83,7 @@ nav.navigation {
 		    -webkit-animation-duration: .7s;
 		    -webkit-animation-name: wheat-animation;
 		    -webkit-animation-fill-mode: forwards;
-		    @include transition(.3s);
+		    @include transition(all, .3s);
 		}
 		&:hover .wheat-rotate-r, 
 		&:active .wheat-rotate-r {
@@ -92,11 +91,11 @@ nav.navigation {
 		    -webkit-animation-duration: .7s;
 		    -webkit-animation-name: wheat-animation-r;
 		    -webkit-animation-fill-mode: forwards;
-		    @include transition(.3s);
+		    @include transition(all, .3s);
 		}
 
 		a {
-			@include transition(.3s);
+			@include transition(all, .3s);
 		}
 		
 		&:hover, &:focus  {
@@ -118,8 +117,9 @@ nav.navigation {
 
 .nav-text {
 	font-weight:200;
+	font-size:1.3rem;
 	margin-bottom:0; 
-	@include transition(.3s);
+	@include transition(all, .3s);
 	@media screen and (min-width:$max-breakpoint){
 		font-weight:200;
 		@include rowMachine(3, 1%);
@@ -394,8 +394,106 @@ RECIPES
 	h3 {
 		color: white;
 	}
+	li {
+		list-style-image: url(icons/cups.svg);
+	}
 }
 
+
+/************************
+RECIPE ROLL 
+************************/
+
+.reciperoll-wrap {
+	width:100%;
+	padding:1%; 
+	@include clearfix();
+}
+
+
+
+
+.reciperoll-item{
+	@include rowMachine(2, 2%);
+	float:left;
+	position: relative;
+	margin-bottom: 2%;
+	@media screen and (min-width:600px) {
+		@include rowMachine(4, 2%);
+		clear:none!important;
+	}
+
+	img {
+		width: 100%;
+		height:auto;
+		max-width:100%;
+	}
+	span {
+		position:absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		padding: 1%;
+		@include transition(background, .3s);
+		overflow:hidden;
+
+	}
+	span:hover{
+		background: $darklay;
+		@include transition(all, .3s);
+
+		h6 {
+			visibility:visible;
+			margin-top:0;
+		}
+	}
+	h6 {
+		visibility:hidden;
+		@include transition(all, .3s);
+		font-size: 1.1rem;
+		text-align: center;
+		margin-top:-1rem;
+
+	}
+}
+
+.touch .reciperoll-item {
+	@include rowMachine(2, 2%);
+	float:left;
+	position: relative;
+	margin-bottom: .4rem;
+	@media screen and (min-width:600px) {
+		@include rowMachine(4, 2%);
+		clear:none!important;
+	}
+	span {
+		position:absolute;
+		top:0;
+		left:0;
+		width: 100%;
+		height: 100%;
+		padding: 1%;
+		background:rgba(0, 0, 0, 0.2);
+	}
+	h6{
+		visibility:visible;
+		font-size: 1.1rem;
+		margin-top:0;
+	}
+}
+
+.pagination {
+	text-align:center;
+	
+}
+
+/************************
+SIDEBAR
+************************/
+.sidebar {
+	list-style:none;
+}
 
 
 /************************
@@ -410,11 +508,10 @@ footer {
 	background: $orange;
 	border-top: $darkorange 3px solid;
 	padding: 2%;
-
 }
+
+//Animated Social icons
 .footer-social {
-
-
 	h3 {
 		color: $darkorange;
 		margin-bottom:2%;
@@ -424,13 +521,98 @@ footer {
 		@include clearfix();
 	}
 	li{
+		display:inline-block;
 		@include rowMachine(3, 2%);
-		height: 3rem;
-		background: $darklay;
-		border: $darkorange 3px solid;
+		height: auto;
+		background: $brown;
+		border: $darkorange 5px solid;
 		float:left;
 		margin-bottom: 2%;
+		margin-top:0;
+		position: relative;
+		overflow:hidden;
+		padding-bottom:28%;
+		@media screen and (min-width: 625px){
+			@include rowMachine(6, 2%);
+			clear:none!important;
+			padding-bottom:12.5%;
+		}
+		//twitter 
+		&:first-child,
+		&:nth-child(2) {
+			background:#4c9fd2;
+		}
+		//facebook
+		&:nth-child(3) {
+			background: #49639E;
+		}
+		//google
+		&:nth-child(4) {
+			background: #DF4A32;
+		}
+		//instagram
+		&:nth-child(5) {
+			background: #3f729b;
+		}
+		//untapppd
+		&:last-child {
+			background:white;
+		}
+		&:hover .icon-twitter,
+		&:hover .icon-untapppd,
+		&:hover .icon-facebook,
+		&:hover .icon-google,
+		&:hover .icon-instagram {
+			margin-top: 100%;
+		}
+		&:hover h6 {
+			margin-top: 29%;
+		}
 	}
+	span{
+		margin: 0 auto;
+		position:absolute;
+		width: 100%;
+	}
+
+	h6{
+		text-align:center;
+		font-size:.9rem;
+		width: inherit;
+		margin: 0 auto;
+		margin-top: -60%;
+		@include transition(margin-top, .3s);
+	}
+}
+.icon {
+	max-width:100%;
+	width:100%;
+	height:auto;
+	padding-bottom:100%;
+	display: block;
+	margin: 0 auto;
+	@include transition(margin-top, .3s);
+}
+.icon-twitter{
+	background:url(icons/twitter.svg) center center no-repeat;
+	background-size:90% 90%;
+
+}
+.icon-untapppd {
+	background:url(icons/untappd.svg) center center no-repeat;
+	background-size:90% 90%;
+}
+.icon-facebook {
+	background:url(icons/facebook.svg) center center no-repeat;
+	background-size:90% 90%;
+}
+.icon-google {
+	background:url(icons/google.svg) center center no-repeat;
+	background-size:90% 90%;
+}
+.icon-instagram {
+	background:url(icons/instagram.svg) center center no-repeat;
+	background-size:90% 90%;
 }
 
 .site-info {
@@ -449,8 +631,8 @@ a.jm-post-like {
 	-o-transition: all 0.3s ease-out 0.2s;
 	text-decoration: none;
 	color:white;
-
 }
+
 a.jm-post-like.liked {
 	color: white;
 	text-decoration: none;
