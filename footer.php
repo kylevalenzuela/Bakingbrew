@@ -7,18 +7,18 @@
  * @package Baking Brew
  */
 ?>
-	</div><!-- .page-wrap -->
+</div><!-- .page-wrap -->
 	<footer id="colophon" class="site-footer" role="contentinfo">
 		<div class="f-wrap">
 			<div class="footer-social">
 				<h3>Social</h3>
 				<ul class="social-list">
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
-					<li></li>
+					<li><a href="https://twitter.com/kylevalenzuela"><span class="icon icon-twitter"></span><span><h6>Twitter<br />@kylevalenzuela</h6></span></a></li>
+					<li><a href="https://twitter.com/bakingbrew"><span class="icon icon-twitter"></span><span><h6>Twitter<br />@bakingbrew</h6></span></a></li>
+					<li><a href="https://www.facebook.com/bakingbrew"><span class="icon icon-facebook"></span><span><h6>Facebook<br />bakingbrew</h6></span></a></li>
+					<li><a href="https://plus.google.com/b/116695932204699760783/116695932204699760783/about"><span class="icon icon-google"></span><span><h6>Google +<br />Baking Brew</h6></span></a></li>
+					<li><a href="http://instagram.com/bakingbrew"><span class="icon icon-instagram"></span><span><h6>Instagram<br />bakingbrew</h6></span></a></li>
+					<li><a href="https://untappd.com/user/valenzuelakyle"><span class="icon icon-untapppd"></span><span><h6>Untapppd<br />valenzuelakyle</h6></span></a></li>
 				</ul>
 			</div>
 			<div class="site-info">
