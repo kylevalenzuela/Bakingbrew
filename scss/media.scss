@@ -37,17 +37,18 @@
 	}
 }
 
-@media screen and (min-width: 960px) {
+@media screen and (min-width: $max-breakpoint) {
 	.two-thirds {
 		width: grid-width(8, true);
 		float:left;
 	}
 	.one-third {
 		display: inline;
-		width: grid-width(4, true);
-		height: 600px;
+		width: grid-width(4);
+		height: auto;
 		background: tomato;
 		float:right;
+		padding:2%;
 	}
 }
 
