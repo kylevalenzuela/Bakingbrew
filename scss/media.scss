@@ -41,14 +41,13 @@
 	.two-thirds {
 		width: grid-width(8, true);
 		float:left;
+		padding: 1%;
 	}
 	.one-third {
 		display: inline;
 		width: grid-width(4);
 		height: auto;
-		background: tomato;
 		float:right;
-		padding:2%;
 	}
 }
 
