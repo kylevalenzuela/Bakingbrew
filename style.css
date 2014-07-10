@@ -17,7 +17,7 @@
   .wheatstock {
     line-height: 1.125rem;
     width: 32.66667%;
-    fill: #efab34;
+    fill: #ffab91;
     display: inline;
     float: left;
     height: 100%;
@@ -84,14 +84,18 @@
     -webkit-transform: rotate(0deg);
     -webkit-transform-origin: bottom right; } }
 
+.right-arrow {
+  fill: #ffab91;
+  float: left; }
+
 header.site-header {
   position: relative;
   width: 100%;
   height: auto;
   padding: 1%;
   margin: 0 auto;
-  background: #2c2008;
-  border-bottom: 4px #efab34 solid; }
+  background: #3e2723;
+  border-bottom: 4px #ffab91 solid; }
 
 .logo {
   width: 100%;
@@ -145,7 +149,7 @@ nav.navigation li {
   list-style: none;
   padding: 2%;
   text-align: center;
-  border: #efab34 solid 1px;
+  border: #ffab91 solid 1px;
   -webkit-transition: all ease-out 0.3s;
   -moz-transition: all ease-out 0.3s;
   -o-transition: all ease-out 0.3s;
@@ -205,7 +209,7 @@ nav.navigation li:focus .nav-text, nav.navigation li:hover .nav-text {
 
 @media screen and (min-width: 960px) {
   nav.navigation li:focus .nav-text, nav.navigation li:hover .nav-text {
-    color: #efab34; } }
+    color: #ffab91; } }
 
 @media screen and (min-width: 960px) {
   nav.navigation {
@@ -269,7 +273,7 @@ nav.navigation li:focus .nav-text, nav.navigation li:hover .nav-text {
   padding: 2%; }
 
 .recent-recipe-block {
-  border-bottom: #efab34 1px solid;
+  border-bottom: #ffab91 1px solid;
   width: 100%;
   height: auto;
   padding: 4% 0; }
@@ -312,7 +316,7 @@ nav.navigation li:focus .nav-text, nav.navigation li:hover .nav-text {
   margin: 0.2% auto 1%;
   background: 0 0;
   width: 17%;
-  border: #efab34 1px solid;
+  border: #ffab91 1px solid;
   border-radius: 25px;
   overflow: hidden; }
 
@@ -337,7 +341,7 @@ nav.navigation li:focus .nav-text, nav.navigation li:hover .nav-text {
 
 .scroll-animation {
   position: absolute;
-  background: #efab34;
+  background: #ffab91;
   height: 10px;
   width: 10px;
   border-radius: 50px;
@@ -424,7 +428,7 @@ nav.navigation li:focus .nav-text, nav.navigation li:hover .nav-text {
   background-size: cover !important;
   background-attachment: scroll;
   background-attachment: fixed !important;
-  border-bottom: #efab34 4px solid;
+  border-bottom: #ffab91 4px solid;
   overflow: hidden; }
 
 .entry-header:after {
@@ -480,6 +484,38 @@ nav.navigation li:focus .nav-text, nav.navigation li:hover .nav-text {
 @media screen and (min-width: 1021px) {
   .entry-content li {
     margin-left: 5%; } }
+
+.checkbox {
+  color: orange;
+  font-family: icomoon;
+  font-size: 1.2rem;
+  cursor: pointer; }
+
+.checkbox:before {
+  content: "\e601";
+  margin-right: 0.5rem;
+  vertical-align: middle; }
+
+.is-checked {
+  color: orange;
+  font-family: icomoon;
+  font-size: 1.2rem;
+  cursor: pointer; }
+
+.is-checked:before {
+  content: "\e600";
+  margin-right: 0.5rem;
+  vertical-align: middle; }
+
+.cb-wrap ul {
+  list-style-position: outside; }
+
+.cb-wrap li {
+  list-style: none;
+  font-style: normal; }
+
+.pf-ft {
+  display: none; }
 
 #disqus_thread {
   background: #fff;
@@ -609,7 +645,7 @@ footer {
   float: left;
   width: 100%;
   height: auto;
-  background: #efab34;
+  background: #ffab91;
   border-top: #7f5600 3px solid;
   padding: 2%; }
 
@@ -629,7 +665,7 @@ footer {
   display: inline-block;
   width: 32%;
   height: auto;
-  background: #2c2008;
+  background: #3e2723;
   border: #7f5600 5px solid;
   float: left;
   margin-bottom: 2%;
@@ -751,35 +787,35 @@ a.jm-post-like:active, a.jm-post-like:focus, a.jm-post-like:hover, a.liked:activ
   color: #fff; }
 
 ::selection {
-  background: #efab34;
+  background: #ffab91;
   color: #fff; }
 
 ::-webkit-input-placeholder {
   color: #7f5600; }
 
 ::-webkit-input-placeholder:focus {
-  color: #efab34; }
+  color: #ffab91; }
 
 ::-webkit-input-placeholder:hover {
-  color: #efab34; }
+  color: #ffab91; }
 
 :-moz-placeholder {
   color: #7f5600; }
 
 :-moz-placeholder:focus {
-  color: #efab34; }
+  color: #ffab91; }
 
 ::-moz-placeholder {
   color: #7f5600; }
 
 ::-moz-placeholder:focus {
-  color: #efab34; }
+  color: #ffab91; }
 
 :-ms-input-placeholder {
   color: #7f5600; }
 
 :-ms-input-placeholder:focus {
-  color: #efab34; }
+  color: #ffab91; }
 
 img {
   -ms-interpolation-mode: bicubic;
@@ -792,6 +828,11 @@ video {
   width: 100%;
   max-width: 100%;
   height: auto; }
+
+svg {
+  display: inline-block;
+  vertical-align: middle;
+  margin-bottom: 0.2rem; }
 
 * {
   margin: 0;
@@ -829,7 +870,7 @@ body {
   font-weight: 300;
   text-decoration: none;
   font-family: Roboto, sans-serif;
-  color: #efab34; }
+  color: #ffab91; }
 
 h1 {
   font-size: 2.625rem;
@@ -873,15 +914,15 @@ a {
   text-decoration: none; }
 
 blockquote {
-  border-top: 2px solid #efab34;
-  border-bottom: 2px solid #efab34;
+  border-top: 2px solid #ffab91;
+  border-bottom: 2px solid #ffab91;
   padding: 2%;
   margin-bottom: 1.5rem; }
 
 blockquote p {
   font-size: 1.51rem;
   font-weight: 100;
-  color: #efab34;
+  color: #ffab91;
   font-style: italic;
   margin-bottom: 0; }
 
@@ -923,7 +964,7 @@ blockquote p {
   width: 100%;
   height: auto;
   padding: 1%;
-  border: #efab34 solid 4px;
+  border: #ffab91 solid 4px;
   margin-bottom: 2%;
   -webkit-transition: border ease-out 0.3s;
   -moz-transition: border ease-out 0.3s;
@@ -960,7 +1001,7 @@ blockquote p {
 
 .bitcoin-link {
   width: 100%;
-  border: #efab34 solid 4px;
+  border: #ffab91 solid 4px;
   padding: 1%;
   -webkit-transition: border ease-out 0.3s;
   -moz-transition: border ease-out 0.3s;
@@ -1013,7 +1054,7 @@ blockquote p {
   width: calc((100% / 12) * 9);
   float: left;
   height: 2rem;
-  border: 2px #efab34 solid;
+  border: 2px #ffab91 solid;
   -webkit-border-radius: 0;
   font-size: 1.2rem;
   padding: 0.5%; }
@@ -1023,7 +1064,7 @@ blockquote p {
 
 input[type=submit] {
   width: calc((100% / 12) * 3);
-  background: #efab34;
+  background: #ffab91;
   color: #fff;
   float: right;
   border: none;
@@ -1041,30 +1082,55 @@ input[type=submit]:active {
   background: #fff;
   box-shadow: 0 3px 3px 0 rgba(50, 50, 50, 0.4);
   padding: 2%;
-  margin-bottom: 1rem; }
+  margin-bottom: 1rem;
+  float: left; }
 
 .side-posts li {
   list-style: none;
   display: inline-block; }
 
 .post-list {
-  border: 1px solid #efab34;
-  padding: 2%; }
+  border: 1px solid #ffab91;
+  padding: 2%;
+  width: 100%;
+  height: auto;
+  position: relative;
+  float: left;
+  overflow: hidden; }
 
-.sidebar-top-posts {
-  list-style: none; }
+.side-post-wrap {
+  width: 200%;
+  position: relative;
+  -webkit-transition: margin-left 500ms cubic-bezier(0.83, -0.15, 0.33, 1.23);
+  -moz-transition: margin-left 500ms cubic-bezier(0.83, -0.15, 0.33, 1.23);
+  -o-transition: margin-left 500ms cubic-bezier(0.83, -0.15, 0.33, 1.23);
+  transition: margin-left 500ms cubic-bezier(0.83, -0.15, 0.33, 1.23); }
 
-.sidebar-top-posts ul {
+.side-post-wrap.toggle-side {
+  margin-left: -100%; }
+
+.sidebar-posts {
+  list-style: none;
+  float: left;
+  width: 50%; }
+
+.sidebar-posts ul {
   margin: 0 auto;
   padding: 2%; }
 
-.sidebar-top-posts li {
-  list-style: none;
-  margin-bottom: 1rem; }
+.sidebar-posts li {
+  list-style: none; }
 
-.sidebar-top-posts a {
+.sidebar-posts a {
   font-weight: 700;
-  color: #494949; }
+  color: #494949;
+  -webkit-transition: color ease-out 0.3s;
+  -moz-transition: color ease-out 0.3s;
+  -o-transition: color ease-out 0.3s;
+  transition: color ease-out 0.3s; }
+
+.sidebar-posts a:active, .sidebar-posts a:hover {
+  color: #ffab91; }
 
 .page-wrap {
   max-width: 84.375em;
@@ -1076,7 +1142,7 @@ input[type=submit]:active {
   margin: 0 auto; }
 
 .cellar-info-module {
-  color: #2c2008;
+  color: #3e2723;
   font-size: 1.5rem;
   font-weight: 100;
   line-height: 1.5rem; }
@@ -1087,7 +1153,7 @@ input[type=submit]:active {
   position: relative; }
 
 .flatbread {
-  fill: #efab34;
+  fill: #ffab91;
   position: relative;
   width: 100%; }
 
@@ -1113,18 +1179,21 @@ input[type=submit]:active {
   border-radius: none;
   -webkit-appearance: none;
   font-size: 1.4rem;
-  color: #efab34; }
+  color: #ffab91; }
 
 .search-field:focus {
   outline: 0;
-  border-bottom: 2px solid #efab34;
-  color: #efab34; }
+  border-bottom: 2px solid #ffab91;
+  color: #ffab91; }
 
 .search-field:focus .search-icon {
   fill: #7f5600; }
 
 .search-submit {
   display: none; }
+
+.tweet {
+  margin: 0 auto; }
 
 @media screen and (min-width: 625px) {
   .main-recipe-img {
