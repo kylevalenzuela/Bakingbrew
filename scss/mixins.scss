@@ -1,4 +1,4 @@
-
+@import 'variables';
 
 /*
 GENERIC VENDOR PREFIX 
@@ -47,17 +47,17 @@ $gutter: 2%;
 /*
 GENERIC  TRANSITION
 */
-@mixin transition($time){
-   -webkit-transition: all ease-out #{$time};
-    -moz-transition: all ease-out #{$time};
-    -o-transition: all ease-out #{$time};
-    transition: all ease-out #{$time};
+@mixin transition($att, $time){
+   -webkit-transition: #{$att} ease-out #{$time};
+    -moz-transition: #{$att} ease-out #{$time};
+    -o-transition: #{$att} ease-out #{$time};
+    transition: #{$att} ease-out #{$time};
 }
 
 /*
 CLEARFIX MIXIN
 */
-@mixin clearfix {
+@mixin clearfix() {
   &:after {
     content: "";
     display: table;
@@ -73,10 +73,16 @@ BORDER MIXIN
 
 }
 
-/*
-ANIMATION SETTINGS
-*/
+@mixin cover() {
+  -webkit-background-size: cover;
+  -moz-background-size: cover;
+  -o-background-size: cover;
+  background-size: cover;
+}
 
-
-
-
+@mixin bounce-animation($att) {
+  -webkit-transition: #{$att} 500ms cubic-bezier(.83,-0.15,.33,1.23); 
+   -moz-transition: #{$att} 500ms cubic-bezier(.83,-0.15,.33,1.23); 
+     -o-transition: #{$att} 500ms cubic-bezier(.83,-0.15,.33,1.23); 
+        transition: #{$att} 500ms cubic-bezier(.83,-0.15,.33,1.23); 
+}
