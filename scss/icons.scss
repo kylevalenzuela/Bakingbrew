@@ -8,23 +8,32 @@ $wheatstock: url(icons/wheatstock.svg) no-repeat top left;
 
 .wheatstock {
 	display:none;
-	@media screen and (min-width:960px){
+	@include transition(all, .3s);
+
+	@media screen and (min-width:$max-breakpoint){
 		line-height: 1.125rem;
 		@include rowMachine(3, 1%);
 		fill:$orange;	
 		display: inline;
 		float:left;
 		height:100%;
+		margin-top:.7rem;
 	}
 }
 
 .wheat-rotate{
 	-webkit-transform: rotate(0deg);
-	@include transition(.3s);
-	&:hover {
-    	
-	}
+	@include transition(all, .3s);
 }
+
+.search-icon {
+	width:grid-width(2);
+	height: auto;
+	float:left; 
+	fill: $darkorange;
+}
+
+
 
 @mixin wheatkeyframe($animation-name) {
 	@-webkit-keyframes #{$animation-name} {
@@ -140,3 +149,9 @@ $wheatstock: url(icons/wheatstock.svg) no-repeat top left;
 	}
 }
 
+
+.right-arrow {
+	fill: $orange;
+
+	float:left;
+}
