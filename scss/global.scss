@@ -60,6 +60,14 @@ video {
   height: auto;
 }
 
+
+svg {
+  display: inline-block; 
+  vertical-align: middle;
+  margin-bottom: .2rem;
+
+}
+
 * { 
   margin: 0; 
   padding: 0; 
@@ -67,6 +75,7 @@ video {
 }
 
 body { 
+  background: url(images/bedge_grunge.png) repeat;
 }
 
 .screen-reader-text { 
@@ -84,13 +93,13 @@ body {
 /* Typography  */
 
 
-@import url(http://fonts.googleapis.com/css?family=Lato:100,300,400,700,900,100italic,300italic,400italic,700italic,900italic);
+@import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,400italic,500,500italic,700,100italic);
 
-h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, p a, li, li a, blockquote, pre, strong{
+h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, p a, li, li a, blockquote, pre, strong, aside, aside a, input{
   word-wrap: break-word;
   font-weight: 300;
   text-decoration: none;
-  font-family: 'Lato', sans-serif;
+  font-family: 'Roboto', sans-serif;
   color: $orange;
 } 
 
@@ -142,6 +151,10 @@ p {
 	margin-bottom: 1.125rem;
 }
 
+a {
+  text-decoration:none;
+}
+
 blockquote {
   border-top: 2px solid $orange;
   border-bottom: 2px solid $orange;
@@ -159,41 +172,225 @@ blockquote {
   }
 }
 
-/*
+.mat-card {
+  background: white;
+  box-shadow: $mat-shadow;
+  margin-bottom: 1rem;
+  margin-top:1rem;
+  @media screen and (min-width: $max-breakpoint){
+    margin-top:0;
+  }
+  padding: 2%;
+}
+
+.two-thirds {
+  width: 100%;
+  padding:1%;
+  float: left;
+}
+
+/************************
 SIDEBAR
-*/
+************************/
+
 
 .one-third {
   width:100%;
-  padding:2%;
+  padding:1%;
+  float: left;
   @media screen and (min-width: $max-breakpoint) {
 
   }
 }
 //donation wrapper
+.coin-wrap {
+  width: 100%;
+  background: white; 
+  box-shadow: $mat-shadow;
+  margin-bottom: 1rem;
+  padding: 2%;
+  h2 {
+    text-align:center;
+  }
+}
+
 .coins {
   width:100%;
-  @include clearfix();
-  max-width: 400px;
-  margin: 0 auto;
+  padding: 0 4%;
 }
 .dodgecoin-link {
-  @include rowMachine(2, 2%);
-  float:left;
+  width:100%;
+  height:auto;
+  padding:1%;
+  @include clearfix();
+  border: $orange solid 4px;
+  margin-bottom: 2%;
+  @include transition(border, .3s);
+
+  &:hover,
+  &:active  {
+    border: $darkorange solid 4px;
+    h3 {
+      color: $darkorange;
+    }
+  }
+
   .dodgecoin {
-    width:100%;
-    height:auto;
+    width: grid-width(2.5, true);
+    max-width:100%;
+    float:left;
+    height:50%;
+    margin-left:2%;
+  }
+
+  h3 {
+    width: grid-width(9.5);
+    float:right;
+    text-align: center;
+    margin-top: 4.5%;
+    @include transition(color, .3s);
   }
 }
 
 .bitcoin-link {
-  @include rowMachine(2, 2%);
-  float:left;
+  width:100%;
+  border: $orange solid 4px;
+  padding: 1%;
+  @include clearfix();
+  @include transition(border, .3s);
+
+  &:hover,
+  &:active  {
+    border: $darkorange solid 4px;
+    h3 {
+      color: $darkorange;
+    }
+  }
+
   .bitcoin {
-    width:100%;
-    height:auto;
+    width: grid-width(2.5);
+    max-width:100%;
+    float:right;
+    height:50%;
+    margin-right:2%;
+  }
+  h3{
+    width: grid-width(9.5, true);
+    float:left;
+    text-align: center;
+    margin-top: 4.5%;
+    @include transition(color, .3s);
   }
 }
+
+/************************
+Sidebar Email Subscriptions
+************************/
+
+.subcribe-wrap {
+  background: white;
+  box-shadow: $mat-shadow;
+  margin-bottom: 1rem;
+  padding: 2%;
+}
+
+.sub-wrap {
+  width: 100%;
+  @include clearfix();
+}
+.reach-email{
+  width: grid-width(9);
+  float: left;
+  height: 2rem;
+  border: 2px $orange solid;
+  -webkit-border-radius:0;
+  font-size: 1.2rem;
+  padding: .5%;
+  &:focus {
+    outline: none;
+  }
+}
+
+input[type="submit"] {
+  width: grid-width(3);
+  background: $orange;
+  color: white;
+  float:right;
+  border:none;
+  -webkit-appearance: none;
+  -webkit-border-radius:0;
+  -moz-appearance: none;
+  height:2rem;
+  font-size: 1.2rem;
+  font-weight: 100;
+  &:active {
+    outline:none;
+  }
+}
+
+/************************
+Sidebar recent / top posts 
+************************/
+
+.hidden-posts {
+}
+
+.side-posts{
+  background: white;
+  box-shadow: $mat-shadow;
+  padding: 2%;
+  margin-bottom:1rem;
+  float:left;
+  ul {}
+  li{
+    list-style:none;
+    display: inline-block;
+  }
+}
+
+.post-list{
+  border: 1px solid $orange;
+  padding: 2%;
+  width: 100%;
+  height: auto;
+  position: relative;
+  float:left;
+  overflow: hidden;
+}
+.side-post-wrap {
+  width: 200%;
+  position: relative;
+  @include bounce-animation(margin-left);
+
+}
+.side-post-wrap.toggle-side {
+  margin-left: -100%;
+}
+
+.sidebar-posts {
+  list-style: none;
+  float:left;
+  width: 50%;
+
+  ul {
+    margin: 0 auto;
+    padding: 2%;
+  }
+  li{
+    list-style: none;
+  }
+  a {
+    font-weight: 700;
+    color: $grey/2; 
+    @include transition(color, .3s);
+    &:hover,
+    &:active {
+      color: $orange;
+    }
+  }
+}
+
+
 
 .page-wrap {
   max-width:$high-end;
@@ -274,8 +471,9 @@ SIDEBAR
   display:none;
 }
 
-
-
+.tweet {
+  margin: 0 auto;
+}
 
 
 
