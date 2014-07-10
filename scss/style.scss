@@ -140,9 +140,11 @@ Main Article
 	position:relative;
 	width:100%;
 	height:inherit;
-	@include border(5px);
 	padding:1%;
 	float:left;
+	background: white;
+	box-shadow: $mat-shadow;
+	margin-bottom: 1rem;
 }
 
 .main-recipe {
@@ -211,6 +213,10 @@ Cellar slider
 */
 
 .home-cellar {
+	box-shadow: $mat-shadow;
+	background: white;
+	float: left;
+	padding: 2% 0;
 
 	h1{
 		width:100%;
@@ -269,6 +275,7 @@ Scroll Animation
 .home-cellar-outer-container {
 	width:100%;
 	max-width: 400%;
+	background: white;
 }
 
 .home-cellar-container {
@@ -372,32 +379,78 @@ RECIPES
 
 // Main Content 
 .entry-content {
-	padding: 3%;
+	padding: 2%;
+	background: white;
+	box-shadow: $mat-shadow;
+	margin-bottom:1rem;
 	li {
   		font-size:1.250rem;
  		color: $grey;
  		font-weight: 300;
  		font-style:italic;
  		padding:1%;
+ 		margin-left: 10%;
  		margin-bottom:0.57rem;
- 		list-style-position: inside;
  		@media screen and (min-width:1021px){
- 			list-style-position: outside;
+ 			margin-left: 5%;
  		}
  	}
 }
+/*
+Check box styling (use [cb] shortcode to see)
+*/
 
-.recipe-content {
-	width: 100%;
-	height: auto;
-	background: $orange;
-	h3 {
-		color: white;
+.checkbox {
+    color: orange;
+	font-family: 'icomoon';
+	font-size: 1.2rem;
+	cursor: pointer;
+
+   
+	&:before {
+		content: "\e601";
+		margin-right: .5rem;
+		vertical-align: middle;
+    }
+  }
+
+
+//checkbox when clicked on [cb] shortcode
+.is-checked {
+  color: orange;
+  font-family: 'icomoon';
+  font-size: 1.2rem;
+  cursor: pointer;
+
+  &:before {
+  	content: "\e600"; 
+    margin-right: .5rem;
+    vertical-align: middle;
+  }
+}
+
+//styles for [cb-wrap] shortcode
+.cb-wrap {
+	ul {
+		list-style-position: outside;
 	}
 	li {
-		list-style-image: url(icons/cups.svg);
+		list-style: none;
+		font-style: normal;
 	}
 }
+
+.pf-ft {
+	display:none;
+}
+
+#disqus_thread {
+	background: white;
+	box-shadow: $mat-shadow;
+	padding: 2%;
+	margin-bottom:1rem;
+}
+
 
 
 /************************
@@ -406,7 +459,7 @@ RECIPE ROLL
 
 .reciperoll-wrap {
 	width:100%;
-	padding:1%; 
+	padding:1%;
 	@include clearfix();
 }
 
@@ -488,12 +541,7 @@ RECIPE ROLL
 	
 }
 
-/************************
-SIDEBAR
-************************/
-.sidebar {
-	list-style:none;
-}
+
 
 
 /************************
