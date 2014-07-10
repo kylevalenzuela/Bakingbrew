@@ -23,26 +23,27 @@ get_header(); ?>
 			<div class="entry-content">
 
 				<?php the_content(); ?>
-				
+				<?php if( is_category() ) : ?>
+				   <?php global $cat; ?>
+				   <?php echo category_description( $cat ); ?>
+				<?php endif; ?>
 			</div><!-- .entry-content -->
 			
-			<div class="recipe-content"> 
-				<h3>The Fixins'</h3>
-				<ul>
-					<li>3/4 Cups of Flour</li>
-					<li>3/4 Cups of Flour</li>
+			
+				<?php 
+				query_posts("meta_key=_post_like_count&orderby=meta_value_num");
+	 			while (have_posts()) : the_post();?>
 
-				</ul>
-			</div><!-- .recipe-content -->
+	 			<?php the_title(); ?>
+	 			<?php endwhile; wp_reset_query(); ?>
+				<?php
+					// If comments are open or we have at least one comment, load up the comment template
+					if ( comments_open() || '0' != get_comments_number() ) :
+						comments_template();
+					endif;
+				?>
 
-			<?php
-				// If comments are open or we have at least one comment, load up the comment template
-				if ( comments_open() || '0' != get_comments_number() ) :
-					comments_template();
-				endif;
-			?>
-
-		<?php endwhile; // end of the loop. ?>
+				<?php endwhile; // end of the loop. ?>
 
 </div><!--two-thirds-->
 
