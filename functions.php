@@ -547,3 +547,28 @@ function checkbox_shortcode() {
     return '<span class="checkbox"></span>';
 }
 add_shortcode( 'cb', 'checkbox_shortcode' );
+
+function meta_brew() {
+    $cats = get_the_category();
+    if ( !empty( $cats ) && !is_wp_error( $cats ) ){
+        foreach ( $cats as $cat ) {
+            echo '<div class="meta-brew-wrap" id="'.$cat->slug.'">';
+            echo '<h1 class="meta-brew-title"><a href="'.get_category_link( $cat->term_id ).'">'.$cat->name.'</a></h1>';
+            echo '<p class="meta-brew-description">'.$cat->description.'</p>';
+            echo '</div>';
+        }
+    } 
+}
+
+function dropdown_menu() {
+    echo "<div class='dropdown-wrap'>";
+           echo  "<div id='dropdown' class='dropdown-items'>";
+                echo "<span>Filter</span>
+                <ul>";
+                echo "<li><a href='" . get_permalink(117) . "'>Top Rated Daily</a></li>";
+                echo "<li><a href='" . get_permalink(122) . "'>Top Rated Weekly</a></li>";
+                echo "<li><a href='" . get_permalink(120) . "'>Top Rated Monthly</a></li>";
+                echo "<li><a href='" . get_permalink(124) . "'>Top Rated All Time</a></li>";
+                echo "<li><a href='" . get_permalink(55) . "'>Recent</a></li>";
+               echo "</ul></div></div>";
+}
