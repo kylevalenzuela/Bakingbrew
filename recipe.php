@@ -23,27 +23,36 @@ get_header(); ?>
 			<div class="entry-content">
 
 				<?php the_content(); ?>
-				<?php if( is_category() ) : ?>
-				   <?php global $cat; ?>
-				   <?php echo category_description( $cat ); ?>
-				<?php endif; ?>
 			</div><!-- .entry-content -->
 			
-			
-				<?php 
-				query_posts("meta_key=_post_like_count&orderby=meta_value_num");
-	 			while (have_posts()) : the_post();?>
+			<section class='mat-card'>
+				<?php meta_brew(); ?>
+      		</section>
 
-	 			<?php the_title(); ?>
-	 			<?php endwhile; wp_reset_query(); ?>
-				<?php
-					// If comments are open or we have at least one comment, load up the comment template
-					if ( comments_open() || '0' != get_comments_number() ) :
-						comments_template();
-					endif;
-				?>
 
-				<?php endwhile; // end of the loop. ?>
+
+			<!-- comments -->
+
+				
+				<div id="disqus_thread" class="disqus_thread">
+					 <div id="disqus_loader" >
+						<button class="disqus-button" onclick='
+						  jQuery.ajaxSetup({cache:true});
+						  jQuery.getScript("http://Bakingbrew.disqus.com/embed.js");
+						  jQuery.ajaxSetup({cache:false});
+						  jQuery("#disqus_loader").remove();
+						'>
+							Post a Comment
+						</button>
+				</div>
+				</div>
+				
+
+
+	<?php endwhile; // end of the loop. ?>
+
+
+
 
 </div><!--two-thirds-->
 
