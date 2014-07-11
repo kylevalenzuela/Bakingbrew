@@ -1,33 +1,38 @@
+(function($){
+
 //adding .touch .no-touch classes
 document.documentElement.className +=
     (("ontouchstart" in document.documentElement) ? ' touch' : ' no-touch');
 
-//recent and popular posts function 
-function Posts(el) {
-  var post = this;
-  this.el = el;
-  this.loadPosts = function() {
-    $.ajax('recent-popular-post.php', {
-      data: {posts: post.el.data('posts')},
-      context: post,
-      success: function(response) {
-        this.el.find('.post-toggle').html(response);
-      },
-      error: function() {
-        this.el.find('.post-toggle').html('<li>There was a problem fetching the latest photos. Please try again.</li>');
-      },
-      timeout: 3000,
-      beforeSend: function() {
-        this.el.addClass('is-fetching');
-      },
-      complete: function() {
-        this.el.removeClass('is-fetching');
-      }
-    });
-  }
-  this.el.on('click', 'button', this.loadPosts);
-}
-jQuery(document).ready(function() {
-  var popular = new Posts($('#popular-posts'));
-  var recent = new Posts($('#recent-posts'));
+
+$(document).ready(function() {
+  var stg = $('.side-top-toggle'),
+      srg = $('.side-recent-toggle'),
+      spw = $('.side-post-wrap'),
+      check = $('.checkbox');
+
+  srg.click(function(e) {
+    e.preventDefault();
+    spw.addClass('toggle-side');
+  });
+
+  stg.click(function(e) {
+    e.preventDefault();
+    spw.removeClass('toggle-side');
+  });
+  check.click(function(){
+    $(this).toggleClass('checkbox is-checked');
+  });
+  //dropdown menu
+  $("#dropdown").on("click", function(e){
+    if($(this).hasClass("open")) {
+      $(this).removeClass("open");
+      $(this).children("ul").slideUp("fast");
+    } else {
+      $(this).addClass("open");
+      $(this).children("ul").slideDown("fast");
+    }
+  });
 });
+
+}(jQuery));
