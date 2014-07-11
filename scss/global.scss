@@ -75,7 +75,7 @@ svg {
 }
 
 body { 
-  background: url(images/bedge_grunge.png) repeat;
+  background: url(images/bedge_grunge.png) repeat fixed;
 }
 
 .screen-reader-text { 
@@ -216,22 +216,19 @@ SIDEBAR
 
 .coins {
   width:100%;
-  padding: 0 4%;
+  padding:4%;
 }
 .dodgecoin-link {
   width:100%;
-  height:auto;
-  padding:1%;
   @include clearfix();
-  border: $orange solid 4px;
-  margin-bottom: 2%;
-  @include transition(border, .3s);
+  @include main-button();
+  @include transition(color, .3s);
+  margin-bottom: 1rem;
 
   &:hover,
   &:active  {
-    border: $darkorange solid 4px;
+
     h3 {
-      color: $darkorange;
     }
   }
 
@@ -245,6 +242,8 @@ SIDEBAR
 
   h3 {
     width: grid-width(9.5);
+    font-size: 1.4rem;
+    color: $grey;
     float:right;
     text-align: center;
     margin-top: 4.5%;
@@ -254,29 +253,30 @@ SIDEBAR
 
 .bitcoin-link {
   width:100%;
-  border: $orange solid 4px;
-  padding: 1%;
   @include clearfix();
-  @include transition(border, .3s);
+  @include main-button();
+  @include transition(color, .3s);
+  margin-bottom: 1rem;
 
   &:hover,
   &:active  {
-    border: $darkorange solid 4px;
     h3 {
-      color: $darkorange;
     }
   }
 
   .bitcoin {
-    width: grid-width(2.5);
+    width: grid-width(2.5, true);
     max-width:100%;
-    float:right;
+    float:left;
     height:50%;
-    margin-right:2%;
+    margin-left:2%;
   }
   h3{
-    width: grid-width(9.5, true);
-    float:left;
+    width: grid-width(9.5);
+    font-size: 1.4rem;
+    float: left;
+    color: $grey;
+    float:right;
     text-align: center;
     margin-top: 4.5%;
     @include transition(color, .3s);
@@ -341,11 +341,26 @@ Sidebar recent / top posts
   padding: 2%;
   margin-bottom:1rem;
   float:left;
-  ul {}
-  li{
-    list-style:none;
-    display: inline-block;
+  .sw{
+    @include clearfix();
+    li{
+      list-style:none;
+      display: inline-block;
+      @include main-button();
+      @include rowMachine(2,1%);
+      float:left;
+      margin-bottom:.5rem;
+    }
+    a {
+      color: $grey;
+      margin-left: .5rem;
+      @include transition(color, .3s);
+      &:hover {
+        color:$orange;
+      }
+    }
   }
+  
 }
 
 .post-list{
@@ -382,6 +397,7 @@ Sidebar recent / top posts
   a {
     font-weight: 700;
     color: $grey/2; 
+    line-height: 1.8rem;
     @include transition(color, .3s);
     &:hover,
     &:active {
