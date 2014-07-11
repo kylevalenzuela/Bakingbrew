@@ -51,13 +51,18 @@
 		</aside>
 
 		<aside class="side-posts">
-			<ul>
-				<li><a href="">Top</a></li>
-				<li><a href="">Recent</a></li>
+			<ul class="sw">
+				<li><a class="side-top-toggle" href="">Top</a></li>
+				<li><a class="side-recent-toggle" href="">Recent</a></li>
 			</ul>
-			<ul class="post-list">
-				<?php jm_most_popular();?>
-			</ul>
+			<div class="post-list">
+				<div class="side-post-wrap">
+					<?php 
+						jm_most_popular();
+						most_recent_side(); 
+					?>
+				</div>
+			</div>
 		</aside>
 		
 	</div><!-- .one-third -->
