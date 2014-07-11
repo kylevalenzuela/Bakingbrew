@@ -403,10 +403,9 @@ Check box styling (use [cb] shortcode to see)
 .checkbox {
     color: orange;
 	font-family: 'icomoon';
-	font-size: 1.2rem;
+	font-size: 1.5rem;
 	cursor: pointer;
 
-   
 	&:before {
 		content: "\e601";
 		margin-right: .5rem;
@@ -421,6 +420,7 @@ Check box styling (use [cb] shortcode to see)
   font-family: 'icomoon';
   font-size: 1.2rem;
   cursor: pointer;
+  font-size: 1.5rem;
 
   &:before {
   	content: "\e600"; 
@@ -461,6 +461,7 @@ RECIPE ROLL
 	width:100%;
 	padding:1%;
 	@include clearfix();
+	clear:both;
 }
 
 
@@ -698,6 +699,91 @@ i {
 	color: white;
 }
 
+#wpstats{
+	visibility:hidden;
+}
+
+
+//dropdown filters 
+
+.dropdown-wrap{
+	position: relative;
+	display: block;
+	float:left;
+	width:100%;
+	padding: 2% 4%;
+	@media screen and (min-width: 680px){
+		float: right;
+		width: 32%;
+		padding: 2% 1%;
+	}
+}
+
+#dropdown {
+	color: $grey; 
+	background: white;
+	width: 100%;
+	border-left: 4px solid $orange;
+	font-size: inherit;
+	cursor: pointer;
+	@include box-shadow-dropdown();
+	@include transition(all, .3s);
+	font-size: 1.2rem;
+	float:left;
+
+	&:hover {	
+		color: darkgrey;
+	}
+	ul {
+		position:relative;
+		display: none;
+		background: white;
+	}
+	li {
+		list-style:none;
+		padding: 1%;
+		background:white;
+		@include transition(background, .3s);
+		&:hover{
+			background: rgba(255, 152, 0, .5);
+		}
+	}
+	
+
+	span {
+		font-family: 'Roboto', sans-serif;
+		margin-left: .4rem;
+		font-size: 1.4rem;
+	}
+	a {
+		color:darkgrey;
+	}
+
+}
+#dropdown.open {
+	background: $orange;
+  	color: white;
+  	border-left-color: $orange;
+} 
+
+//disqus Ajax button 
+
+
+.disqus-button {
+	background: white;
+	display: block;
+	width: 30%;
+	font-size: 1.4rem;
+	box-shadow: $mat-shadow;
+	border: none;
+	border-left: 4px solid $orange;
+	margin: 0 auto;
+	color: $grey;
+	cursor:pointer;
+	&:hover {
+		color: $orange;
+	}
+}
 
 @import 'media';
 
