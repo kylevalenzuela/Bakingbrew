@@ -14,6 +14,7 @@ Tags: responsive, beer, beer, orange
 @import 'mixins';
 @import 'global';
 @import 'icons';
+@import 'ad';
 
 /*
 NAVIGATION
@@ -27,6 +28,9 @@ header.site-header {
 	margin: 0 auto;
 	background:$brown;
 	border-bottom:4px $orange solid;
+	@media screen and (min-width: 960px){
+		padding: 0 1%;
+	}
 }
 .logo {
 	@include rowMachine(1, 0);
@@ -62,7 +66,7 @@ nav.navigation {
 	@include clearfix();
 	ul {}
 	li { 
-		@include rowMachine(3, 2%);
+		@include rowMachine(4, 2%);
 		position: relative;
 		float:left;
 		list-style:none;
@@ -75,6 +79,7 @@ nav.navigation {
 			border:none;
 			font-size: 1.125rem;
 			padding: 0;
+			margin-top: .4rem;
 		}
 
 		&:hover .wheat-rotate,
@@ -83,15 +88,28 @@ nav.navigation {
 		    -webkit-animation-duration: .7s;
 		    -webkit-animation-name: wheat-animation;
 		    -webkit-animation-fill-mode: forwards;
-		    @include transition(all, .3s);
+		    @include vendor-prefix(animation, wheat-animation .7s forwards);
 		}
+		
 		&:hover .wheat-rotate-r, 
 		&:active .wheat-rotate-r {
 			-webkit-animation-delay: 0;
 		    -webkit-animation-duration: .7s;
 		    -webkit-animation-name: wheat-animation-r;
 		    -webkit-animation-fill-mode: forwards;
-		    @include transition(all, .3s);
+		}
+		
+		h4 {
+			font-size: .95rem;
+			@media screen and (min-width: 571px){
+				font-size: 1.3rem;
+			}
+			@media screen and (min-width: 715px){
+				font-size: 1.7rem;
+			}
+			@media screen and (min-width: 960px){
+				font-size: 1.2rem;
+			}
 		}
 
 		a {
@@ -156,7 +174,6 @@ Main Article
 .main-recipe-img {
 	width:inherit;
 	height:auto;
-	background: darkblue;
 	position:relative;
 }
 	
@@ -166,8 +183,12 @@ Main Article
 	height:auto;
 	bottom: 0;
 	left:0;
-	background:$darklay;
+	background: $darklay;
 	padding: 2%;
+	h5 {
+	color: white;
+
+	}
 }
 
 /*
@@ -196,14 +217,122 @@ Recent Articles
 	float:left;
 }
 
+.cellar-info-module  {
+	a {
+		color: $grey;
+		font-size: 1rem;
+		font-weight: 500;
+		&:hover {
+			color: $orange;
+		}
+	}
+}
+
+.block {
+	display: block;
+}
+
+.inline {
+	display: inline-block;
+}
+.mini-icon {
+	width: 1.2rem;
+	height: 1.2rem;
+	display: inline-block;
+	margin-right: .5rem;
+	vertical-align: middle;
+}
+
+.cellar-icon {
+	background: url(icons/wheat-brew.svg) no-repeat;
+}
+
+.tag-icon {
+	background: url(icons/breadtag.svg) no-repeat;
+}
+
 .recent-recipe-img{
 	width: grid-width(4);
 	height: auto;
 	float:right;
+	position: relative;
 
 	img {
 		width:100%;
 		max-width:100%;
+	}
+	&:hover .recent-recipe-img-hover,
+	&:active .recent-recipe-img-hover {
+		opacity: 100;
+	}
+	&:hover .mb-2,
+	&:active .mb-2 {
+		@include vendor-prefix(animation, bread-hover 1s infinite); 
+	}
+	&:hover .mb-3,
+	&:active .mb-3 {
+		@include vendor-prefix(animation, bread-hover2 1s infinite); 
+	}
+	&:hover .mb-1,
+	&:active .mb-1 {
+		@include vendor-prefix(animation, bread-hover3 1s infinite); 
+	}
+}
+
+.recent-recipe-img-hover {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+	top: 0;
+	padding: 2%;
+	margin: 0 auto;
+	fill: $orange;
+	background: $darklay;
+	opacity: 0;
+	@include transition(opacity, .3s);
+}
+@-webkit-keyframes bread-hover {
+	0% {
+			opacity: 1;
+	}
+	4% {
+			opacity: 1;
+	}
+	5% {
+			opacity: 1;
+	}
+	100% {
+			opacity: 1;
+	}
+}
+
+@-webkit-keyframes bread-hover2 {
+	0% {
+			opacity: 0;
+	}
+	33% {
+			opacity: 0;
+	}
+	34% {
+			opacity: 1;
+	}
+	100% {
+			opacity: 1;
+	}
+}
+
+@-webkit-keyframes bread-hover3 {
+	0% {
+			opacity: 0;
+	}
+	65% {
+			opacity: 0;
+	}
+	66% {
+			opacity: 1;
+	}
+	100% {
+			opacity: 1;
 	}
 }
 
@@ -324,6 +453,12 @@ Home Cellar Content
 	float:left;
 }
 
+.home-blogroll {
+	width: 100%;
+	display:block;
+	margin-top:1rem;
+	float:left;
+}
 /************************
 RECIPES
 ************************/
@@ -388,9 +523,8 @@ RECIPES
  		color: $grey;
  		font-weight: 300;
  		font-style:italic;
- 		padding:1%;
  		margin-left: 10%;
- 		margin-bottom:0.57rem;
+ 		margin-bottom:0.9rem;
  		@media screen and (min-width:1021px){
  			margin-left: 5%;
  		}
@@ -450,8 +584,94 @@ Check box styling (use [cb] shortcode to see)
 	padding: 2%;
 	margin-bottom:1rem;
 }
+/************************
+SINGLE BLOG POST 
+************************/
+.entry-header-wrap-blog {
+
+}
+
+.hwb {
+	width:auto;
+}
+
+.entry-header-blog {
+	padding:1%;
+}
+
+.hwb2 {
+		
+}
+
+.head-wrapper-blog {
+	max-width:none;
+	width:100%;
+	height: 10rem;
+	margin: 0 auto;
+	padding:1%;
+	background: white; 
+	box-shadow: $mat-shadow;
+	max-width: $high-end;
+	h3 {
+		@media screen and (min-width:550px){
+			font-size: 2.5rem;
+		}
+	}
+}
 
 
+
+.time-stamp{
+	font-size: 1.4rem;
+	color: $grey;
+}
+
+
+/************************
+BLOG ROLL
+************************/	
+
+.blogroll-wrap {
+
+}
+.blogroll-time {
+	color: $grey;
+	font-weight: 500;
+	font-size: 1rem;
+	margin-bottom: 0.500rem!important;
+}
+
+.blogroll-item {
+  border-left: 4px solid $orange;
+  margin-bottom: 1rem!important;
+  
+	h3 {
+		color: $grey/1.4;
+		margin-bottom: 1rem;
+		&:hover {
+			color: $orange;
+		}
+  	}
+  
+  &:nth-child(2n+2) {
+  	background: url(images/halftone.png) repeat!important;
+
+  }
+}
+
+.blogroll-excerpt{
+
+}
+
+.blogroll-more {
+	color: $grey;
+	
+	&:hover,
+	&:hover .arrow-right {
+		color: $orange;
+		fill:$orange;
+	}
+}
 
 /************************
 RECIPE ROLL 
@@ -464,6 +684,9 @@ RECIPE ROLL
 	clear:both;
 }
 
+.arrow-right {
+	fill: $grey;
+}
 
 
 
@@ -488,28 +711,43 @@ RECIPE ROLL
 		left:0;
 		width: 100%;
 		height: 100%;
-		padding: 1%;
-		@include transition(background, .3s);
+		@include bounce-animation(all);
 		overflow:hidden;
+
 
 	}
 	span:hover{
-		background: $darklay;
 		@include transition(all, .3s);
-
 		h6 {
 			visibility:visible;
 			margin-top:0;
 		}
+		.rr-item-wrap {
+			top:0;
+		}
 	}
+
 	h6 {
 		visibility:hidden;
-		@include transition(all, .3s);
+		@include bounce-animation(all);
 		font-size: 1.1rem;
+		font-weight: 100;
 		text-align: center;
 		margin-top:-1rem;
+		color: white;
 
 	}
+}
+.rr-item-wrap {
+	position:relative;
+	top:-100%;
+	left:0;
+	width: 100%;
+	height: 100%;
+	padding: 5%;
+	overflow:hidden;
+	background: rgba(255, 152, 0, 0.5);
+	@include bounce-animation(all);
 }
 
 .touch .reciperoll-item {
@@ -772,7 +1010,7 @@ i {
 .disqus-button {
 	background: white;
 	display: block;
-	width: 30%;
+	width: 50%;
 	font-size: 1.4rem;
 	box-shadow: $mat-shadow;
 	border: none;
@@ -785,7 +1023,77 @@ i {
 	}
 }
 
+.cellar-recipe-roll {
+	text-align: center;
+	h2 {
+		font-weight: 100;
+	}
+}
+
+.cellar-item {
+	padding: 0!important;
+}
+
+.cellarroll-item-wrap {
+	width: 100%; 
+	height: auto;
+	@include clearfix();
+	padding: 2%;
+}
+
+.cellarroll-item-img {
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	@media screen and (min-width: 650px){
+		width: grid-width(3, 2%);
+		float: left;
+	}
+	img {
+		max-width: 100%;
+	}
+}
+.cellarroll-item-content {
+	@media screen and (min-width: 650px){
+		width: grid-width(9);
+		float: right;
+	}
+}
+
+/*
+404 PAGE 
+*/
+.four-wrap {
+	h1{
+		text-align: center;
+		margin-bottom: 1rem;
+	}
+	h3{
+		text-align: center;
+		color: $grey/2;
+	} 
+}
+
+.next-post-slideout{
+	width: 14rem!important;
+	height: 2.5rem;
+	position: fixed;
+	margin-right:-14rem;
+	bottom:0;
+	right:0;
+	float:right;
+	@include transition(all, .3s);
+}
+
+ .slide-it{
+	margin-right:0!important;
+}
+
+
+
 @import 'media';
+
 
 
 

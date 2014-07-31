@@ -92,12 +92,27 @@ body {
 
 /* Typography  */
 
+@font-face {
+    font-family: 'icomoon';  /*Icon Font*/
+    src: url(../fonts/icomoon.eot);
+    src: url(../fonts/icomoon.eot?#iefix) format('embedded-opentype'),
+         url(../fonts/icomoon.woff) format('woff'),
+         url(../fonts/icomoon.ttf) format('truetype'),
+         url(../fonts/icomoon.svg#icomoon) format('svg');
+    font-weight: normal;
+    font-style: normal;
+}
+
+
 
 @import url(http://fonts.googleapis.com/css?family=Roboto:400,100,300,400italic,500,500italic,700,100italic);
 
-h1, h2, h3, h4, h5, h6, h1 a, h2 a, h3 a, h4 a, h5 a, h6 a, p, p a, li, li a, blockquote, pre, strong, aside, aside a, input{
+h1, h2, h3, h4, h5, h6, h1 a, 
+h2 a, h3 a, h4 a, h5 a, h6 a, 
+p, p a, li, li a, blockquote, 
+pre, strong, aside, aside a, 
+input, div, div a, time, time a,{
   word-wrap: break-word;
-  font-weight: 300;
   text-decoration: none;
   font-family: 'Roboto', sans-serif;
   color: $orange;
@@ -114,21 +129,18 @@ h2 {
   font-size: 2.250rem; /* = 36px */ 
   font-weight: 300;
   line-height: 2.250rem;
-  margin-bottom:.5rem;
 }
 
 h3 {
   font-size: 1.875rem; /* = 30px */
   font-weight: 400;
   line-height: 1.875rem;
-  margin-bottom:.5rem;
 }
 
 h4 {
   font-size: 1.500rem; /* = 24px */
   font-weight: 100;
   line-height: 1.500rem;
-  margin-bottom:.5rem;
 }
 
 h5 {
@@ -171,12 +183,22 @@ blockquote {
     }
   }
 }
+.cards {
+  background: $mat-white;
+  box-shadow: $mat-shadow;
+  margin-bottom: 1rem;
+  width: 100%;
+  float:left;
+  padding: 2%;
+}
 
 .mat-card {
-  background: white;
+  background: $mat-white;
   box-shadow: $mat-shadow;
   margin-bottom: 1rem;
   margin-top:1rem;
+  float:left;
+  width: 100%;
   @media screen and (min-width: $max-breakpoint){
     margin-top:0;
   }
@@ -193,11 +215,31 @@ blockquote {
 SIDEBAR
 ************************/
 
+.sidebar-left {
+  @media screen and (min-width: 625px){
+    @include rowMachine(2, 2%);
+    float: left;
+  }
+  @media screen and (min-width: $max-breakpoint){
+    width: 100%;
+  }
+}
+
+.sidebar-right {
+  @media screen and (min-width: 625px){
+    @include rowMachine(2, 2%);
+    float: left;
+  }
+  @media screen and (min-width: $max-breakpoint){
+    width: 100%;
+  }
+}
 
 .one-third {
   width:100%;
   padding:1%;
-  float: left;
+  float: right;
+  @include clearfix();
   @media screen and (min-width: $max-breakpoint) {
 
   }
@@ -209,6 +251,7 @@ SIDEBAR
   box-shadow: $mat-shadow;
   margin-bottom: 1rem;
   padding: 2%;
+  float: right;
   h2 {
     text-align:center;
   }
@@ -216,7 +259,7 @@ SIDEBAR
 
 .coins {
   width:100%;
-  padding:4%;
+  padding:6%;
 }
 .dodgecoin-link {
   width:100%;
@@ -229,6 +272,7 @@ SIDEBAR
   &:active  {
 
     h3 {
+      color: $orange;
     }
   }
 
@@ -261,6 +305,7 @@ SIDEBAR
   &:hover,
   &:active  {
     h3 {
+      color: $orange;
     }
   }
 
@@ -288,34 +333,35 @@ Sidebar Email Subscriptions
 ************************/
 
 .subcribe-wrap {
-  background: white;
-  box-shadow: $mat-shadow;
   margin-bottom: 1rem;
   padding: 2%;
+  float: right;
 }
 
 .sub-wrap {
   width: 100%;
-  @include clearfix();
+  padding: 2%;
 }
 .reach-email{
-  width: grid-width(9);
+  width: 100%;
   float: left;
   height: 2rem;
   border: 2px $orange solid;
   -webkit-border-radius:0;
   font-size: 1.2rem;
   padding: .5%;
+  margin-bottom: 1rem;
   &:focus {
     outline: none;
   }
 }
 
 input[type="submit"] {
-  width: grid-width(3);
+  width: 100%;
   background: $orange;
+  margin: 0 auto;
+  text-align: center;
   color: white;
-  float:right;
   border:none;
   -webkit-appearance: none;
   -webkit-border-radius:0;
@@ -327,6 +373,7 @@ input[type="submit"] {
     outline:none;
   }
 }
+
 
 /************************
 Sidebar recent / top posts 
@@ -342,14 +389,16 @@ Sidebar recent / top posts
   margin-bottom:1rem;
   float:left;
   .sw{
+    padding: 5%;
     @include clearfix();
     li{
       list-style:none;
       display: inline-block;
       @include main-button();
-      @include rowMachine(2,1%);
+      @include rowMachine(2,15%);
       float:left;
       margin-bottom:.5rem;
+      text-align: center;
     }
     a {
       color: $grey;
@@ -404,6 +453,11 @@ Sidebar recent / top posts
       color: $orange;
     }
   }
+}
+
+//ad container
+.ad {
+  margin-bottom: 1rem;
 }
 
 
