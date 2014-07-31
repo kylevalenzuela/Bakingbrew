@@ -1,0 +1,178 @@
+@import 'mixins';
+
+@mixin beerspin-frames($vp) {
+
+  0% { 
+    -#{$vp}-transform: translateX(350px); 
+     
+}
+  3%{
+    -#{$vp}-transform: translateX(350px); 
+     
+  }
+  13%{
+    -#{$vp}-transform: translateX(0px);
+  }
+  20% {
+  -#{$vp}-transform: rotate(0deg) scale(1,1);
+    -#{$vp}-transform-origin: center center;
+  }
+  
+  25% {
+    -#{$vp}-transform: rotate(360deg) scale(0,0);
+    -#{$vp}-transform-origin: center center;
+  opacity:1;
+  }
+  26% {
+    opacity:0;
+  }
+  50% {
+  }
+  100% { 
+      opacity: 0;
+  }
+}
+
+@mixin breadspin-frames($vp) {
+  0%{
+     opacity:0;
+  }
+  21%{ 
+    opacity:0;
+  }
+  22%{
+    opacity:1; 
+    -#{$vp}-transform: scale(0,0) rotate(0deg);
+      -#{$vp}-transform-origin: center center;
+  }
+  30% {
+      -#{$vp}-transform: scale(1,1) rotate(360deg);
+    -#{$vp}-transform-origin: center center;
+  }
+  40% {
+      -#{$vp}-transform: scale(1,1) rotate(360deg) translateX(0);
+    -#{$vp}-transform-origin: center center;
+  }
+  45%{
+    -#{$vp}-transform: translateX(-400px);
+  }
+  100%{
+    -#{$vp}-transform: translateX(-400px);
+  }
+}
+
+@mixin recipetxt-frames($vp){
+  0%{
+  -#{$vp}-transform: translateY(100px);
+  }
+  
+  43% {
+  -#{$vp}-transform: translateY(100px);
+  }
+  
+  49%{
+      -#{$vp}-transform: translateY(0);
+  }
+  70% {
+    -#{$vp}-transform: translateY(0);
+  }
+  75%{
+    -#{$vp}-transform: translateY(100px);  
+  }
+  100%{
+     -#{$vp}-transform: translateY(100px); 
+  }
+}
+@mixin bbtxt-frames($vp){
+  0% {
+    -#{$vp}-transform: scaleX(0);
+  }
+  47% {
+     -#{$vp}-transform: scaleX(0);   
+  }
+  54% {
+     -#{$vp}-transform: scaleX(1);   
+
+  }
+   70% {
+    -#{$vp}-transform: translateY(0);
+  }
+  79%{
+    -#{$vp}-transform: translateY(130px);  
+  }
+  100%{
+    -#{$vp}-transform: translateY(130px); 
+  }
+}
+
+.ad-wrap {
+	height: 0;
+  padding-top: 100%;
+  position: relative;
+  width:100%;
+}
+
+.bb-ad {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.bb-ad-beer {
+  @include vendor-prefix (animation, beerspin 9s cubic-bezier(.99,-0.24,.15,1.32) infinite); 
+}
+@-webkit-keyframes beerspin {
+  @include beerspin-frames(webkit);
+}
+@-moz-keyframes beerspin {
+ @include beerspin-frames(moz); 
+}
+@-ms-keyframes beerspin{
+  @include beerspin-frames(ms);
+}
+
+.bb-ad-bread {
+	@include vendor-prefix (animation, breadspin 9s cubic-bezier(.99,-0.24,.15,1.32) infinite); 
+}
+
+
+@-webkit-keyframes breadspin {
+  @include breadspin-frames(webkit);
+}
+@-moz-keyframes breadspin {
+  @include breadspin-frames(moz);
+}
+@-ms-keyframes breadspin {
+  @include breadspin-frames(ms);
+}
+
+
+.bb-ad-recipes{
+  @include vendor-prefix (animation, recipetxt 9s cubic-bezier(.99,-0.24,.15,1.32) infinite);
+}
+
+@-webkit-keyframes recipetxt {
+  @include recipetxt-frames(webkit);  
+}
+@-moz-keyframes recipetxt {
+  @include recipetxt-frames(moz);  
+}
+@-ms-keyframes recipetxt {
+  @include recipetxt-frames(ms);  
+}
+
+.bb-ad-bb {
+  @include vendor-prefix (animation, bbtxt 9s cubic-bezier(.99,-0.24,.15,1.32) infinite);
+}
+
+@-webkit-keyframes bbtxt {
+  @include bbtxt-frames(webkit);
+}
+@-moz-keyframes bbtxt {
+  @include bbtxt-frames(moz);
+}
+@-ms-keyframes bbtxt {
+  @include bbtxt-frames(ms);
+}
