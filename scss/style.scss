@@ -100,7 +100,7 @@ nav.navigation {
 		}
 		
 		h4 {
-			font-size: .95rem;
+			font-size: .9rem;
 			@media screen and (min-width: 571px){
 				font-size: 1.3rem;
 			}
@@ -186,7 +186,6 @@ Main Article
 	background: $darklay;
 	padding: 2%;
 	h5 {
-	color: white;
 
 	}
 }
@@ -227,6 +226,8 @@ Recent Articles
 		}
 	}
 }
+
+
 
 .block {
 	display: block;
@@ -283,6 +284,7 @@ Recent Articles
 	width: 100%;
 	height: 100%;
 	position: absolute;
+	display: block;
 	top: 0;
 	padding: 2%;
 	margin: 0 auto;
@@ -343,7 +345,7 @@ Cellar slider
 
 .home-cellar {
 	box-shadow: $mat-shadow;
-	background: white;
+	background: $mat-white;
 	float: left;
 	padding: 2% 0;
 
@@ -367,6 +369,9 @@ Scroll Animation
   border: $orange 1px solid;
   border-radius: 25px;
   overflow:hidden;
+  @media screen and (min-width: 625px) {
+  	display: none;
+  }
 
   h3 {
 		text-align: center;
@@ -397,28 +402,37 @@ Scroll Animation
   border-radius: 50px;
   -webkit-animation: taco 5s infinite;
   top:37%;
-  z-index: -1;
+  z-index: 201;
 }
 
 
 .home-cellar-outer-container {
 	width:100%;
 	max-width: 400%;
-	background: white;
+	background: $mat-white;
+	margin-bottom: 1rem;
+	float: left;
+	box-shadow: $mat-shadow;
+	@media screen and (min-width: 650px) {
+		max-width: 100%;
+	}
 }
 
 .home-cellar-container {
 	width:100%;
-	height:400px;
 	overflow-x: scroll;
 	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;
+	background: white;
 }
 
 .home-cellar-carousel {
 	width: 400%;
 	height: 100%;
 	overflow:hidden;
+	@media screen and (min-width: 650px) {
+		width: 100%;
+	}
 }
 
 .home-cellar-content {
@@ -430,6 +444,9 @@ Scroll Animation
 	padding: 2%;
 	background: white;
 	@include clearfix();
+	@media screen and (min-width: 650px) {
+		@include rowMachine(2, 2%);
+	}
 }
 
 /*
@@ -438,8 +455,9 @@ Home Cellar Content
 
 .home-cellar-img {
 	margin: 0 auto;
-	@include rowMachine(2, 2%);
+	width: 100%;
 	float:left;
+	display: block;
 	
 	img {
 		max-height:100%;
@@ -449,16 +467,38 @@ Home Cellar Content
 }
 
 .home-cellar-block {
-	@include rowMachine(2, 2%);
-	float:left;
+	width: 100%; 
+	display: block;
+	margin: 0 auto;
+	float: left;
+	@include clearfix();
+	h4 {
+		text-align: center;
+		display: block;
+	}
+	.bread-module {
+		margin: .5rem auto 0 auto!important;
+		width: 30%!important;
+		float: none!important;
+		background: none!important;
+	}
 }
+
 
 .home-blogroll {
 	width: 100%;
 	display:block;
-	margin-top:1rem;
 	float:left;
 }
+
+.home-blogroll-title {
+	h1 {text-align: center;}
+	h5 {
+		text-align: center;
+		margin-bottom: .4rem;
+	}
+}
+
 /************************
 RECIPES
 ************************/
@@ -493,23 +533,35 @@ RECIPES
 
 .head-wrapper {
 	position:relative;
-	max-width: $high-end;
 	margin: 0 auto;
 	-webkit-overflow-scrolling: touch;
+
 
 }
 //Title 
 .entry-title {
   position: relative;		
-  width: grid-width(10);
+  width: 100%;
+  text-align: center;
   font-size: 150%;
-  margin: 0 18%;
   text-shadow: $text-shadow;
+  vertical-align: middle;
+  max-width: $max-breakpoint;
+
   @media screen and (min-width: $max-breakpoint){
     font-size: 2.925rem;
     line-height: 2.8rem;
     margin: 0 auto;
   }
+}
+
+.entry-brew-title {
+	display: table;
+	width: grid-width(9);
+	h3 {
+		display: table-cell;
+		vertical-align: middle;
+	}
 }
 
 // Main Content 
@@ -518,6 +570,7 @@ RECIPES
 	background: white;
 	box-shadow: $mat-shadow;
 	margin-bottom:1rem;
+	float:left;
 	li {
   		font-size:1.250rem;
  		color: $grey;
@@ -543,10 +596,9 @@ Check box styling (use [cb] shortcode to see)
 	&:before {
 		content: "\e601";
 		margin-right: .5rem;
-		vertical-align: middle;
+		vertical-align: bottom;		
     }
-  }
-
+}
 
 //checkbox when clicked on [cb] shortcode
 .is-checked {
@@ -559,7 +611,7 @@ Check box styling (use [cb] shortcode to see)
   &:before {
   	content: "\e600"; 
     margin-right: .5rem;
-    vertical-align: middle;
+    vertical-align: bottom;		
   }
 }
 
@@ -571,6 +623,7 @@ Check box styling (use [cb] shortcode to see)
 	li {
 		list-style: none;
 		font-style: normal;
+		vertical-align: middle;
 	}
 }
 
@@ -583,7 +636,56 @@ Check box styling (use [cb] shortcode to see)
 	box-shadow: $mat-shadow;
 	padding: 2%;
 	margin-bottom:1rem;
+	width: 100%;
+	float: left;
 }
+
+.share-buttons {
+	text-align: center;
+	li{
+		list-style: none;
+		display: inline-block;
+		font-style: normal!important;
+		padding: 1%;
+		margin-right:.3rem!important;
+		margin-left: 0!important;
+		font-size: 1em;
+
+	}
+}
+.share-twitter {
+	background: #4c9fd2;
+	a {
+		color: white;
+	}
+}
+.share-facebook {
+	background: #49639E;
+	a{color:white;}
+}
+.share-google {
+	background: #DF4A32;
+	a{color: white;}
+}
+.share-pinterest{
+	background: #C92228;
+	a{color: white;}
+}
+.share-reddit {
+	background: white;
+	border: #ff5700 solid 1px;
+	a {color: #ff5700;}
+}
+.share-evernote {
+	background: #24D665;
+	a{color: white;}
+}
+.share-mail {
+	background: $grey;
+	a{color: white;}
+}
+
+
 /************************
 SINGLE BLOG POST 
 ************************/
@@ -596,7 +698,7 @@ SINGLE BLOG POST
 }
 
 .entry-header-blog {
-	padding:1%;
+	float: left;
 }
 
 .hwb2 {
@@ -648,6 +750,7 @@ BLOG ROLL
 	h3 {
 		color: $grey/1.4;
 		margin-bottom: 1rem;
+		margin-top:1rem;
 		&:hover {
 			color: $orange;
 		}
@@ -676,6 +779,16 @@ BLOG ROLL
 /************************
 RECIPE ROLL 
 ************************/
+
+.reciperoll-title {
+	h2{
+		text-align: center;
+		font-size: 1.4rem;
+		@media screen and (min-width: 600px) {
+			font-size: 2.25rem;
+		}
+	}
+}
 
 .reciperoll-wrap {
 	width:100%;
@@ -750,6 +863,10 @@ RECIPE ROLL
 	@include bounce-animation(all);
 }
 
+.touch .rr-item-wrap  {
+	
+}
+
 .touch .reciperoll-item {
 	@include rowMachine(2, 2%);
 	float:left;
@@ -765,13 +882,14 @@ RECIPE ROLL
 		left:0;
 		width: 100%;
 		height: 100%;
-		padding: 1%;
-		background:rgba(0, 0, 0, 0.2);
-	}
-	h6{
-		visibility:visible;
-		font-size: 1.1rem;
-		margin-top:0;
+
+		h6 {
+			visibility:visible;
+			margin-top:0;
+		}
+		.rr-item-wrap {
+			top:0;
+		}
 	}
 }
 
@@ -799,6 +917,11 @@ footer {
 
 //Animated Social icons
 .footer-social {
+	max-width: 960px;
+	margin: 0 auto;
+	display: block;
+
+
 	h3 {
 		color: $darkorange;
 		margin-bottom:2%;
@@ -806,6 +929,7 @@ footer {
 	ul {
 		font-size: 0;
 		@include clearfix();
+		max-width: 960px;
 	}
 	li{
 		display:inline-block;
@@ -899,15 +1023,38 @@ footer {
 }
 .icon-instagram {
 	background:url(icons/instagram.svg) center center no-repeat;
-	background-size:90% 90%;
+	background-size:80% 80%;
+}
+
+.footer-linkage {
+	margin-bottom: .5rem;
+	a {
+		color: $darkorange;
+		@include transition(color, .3s);
+		&:hover {
+			color: $mat-white;
+		}	
+	}
+	ul{
+		text-align: center;
+	}
+	li {
+		list-style: none;
+		display: inline-block;	
+		font-size: 1.2rem;
+		padding: 0 .65%;
+	} 
 }
 
 .site-info {
-	color:white;
+	color:$mat-white;
+	text-align: center;
+	display: block;
 }
 
 /* Post Like System */
-a.jm-post-like {
+a.jm-post-like,
+.jm-post-like {
 	font-weight: normal;
 	display: block;
 	width: auto;
@@ -920,16 +1067,24 @@ a.jm-post-like {
 	color:white;
 }
 
-a.jm-post-like.liked {
+a.jm-post-like.liked,
+.jm-post-like.liked  {
 	color: white;
 	text-decoration: none;
 }
 a.jm-post-like:hover,
+.jm-post-like:hover,
 a.jm-post-like:active,
+.jm-post-like:active,
 a.jm-post-like:focus,
+.jm-post-like:focus,
 a.liked:hover,
+.liked:hover,
 a.liked:active,
-a.liked:focus { /* default on hover */
+.liked:active,
+.liked:focus,  
+a.liked:focus
+ { /* default on hover */
 	color: white;
 }
 
@@ -939,6 +1094,10 @@ i {
 
 #wpstats{
 	visibility:hidden;
+}
+
+.heart-home {
+	color: $orange!important;
 }
 
 
@@ -1027,6 +1186,7 @@ i {
 	text-align: center;
 	h2 {
 		font-weight: 100;
+
 	}
 }
 
@@ -1039,6 +1199,7 @@ i {
 	height: auto;
 	@include clearfix();
 	padding: 2%;
+	
 }
 
 .cellarroll-item-img {
@@ -1046,12 +1207,31 @@ i {
 	display: block;
 	margin: 0 auto;
 	margin-bottom: 1rem;
+	white-space: nowrap;
 	@media screen and (min-width: 650px){
 		width: grid-width(3, 2%);
+		display: inline-block;
 		float: left;
+		margin-top: 6%;
 	}
 	img {
 		max-width: 100%;
+		width: 100%;
+	}
+}
+
+.cellarroll-item-img-home {
+	width: 50%;
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	@media screen and (min-width: 650px){
+
+	}
+	img {
+		max-width: 100%;
+		width: 100%;
+		margin: 0 auto;
 	}
 }
 .cellarroll-item-content {
@@ -1090,7 +1270,9 @@ i {
 	margin-right:0!important;
 }
 
-
+.meta-brew-title {
+	margin-bottom: 1rem;
+}
 
 @import 'media';
 

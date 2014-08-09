@@ -94,11 +94,11 @@ body {
 
 @font-face {
     font-family: 'icomoon';  /*Icon Font*/
-    src: url(../fonts/icomoon.eot);
-    src: url(../fonts/icomoon.eot?#iefix) format('embedded-opentype'),
-         url(../fonts/icomoon.woff) format('woff'),
-         url(../fonts/icomoon.ttf) format('truetype'),
-         url(../fonts/icomoon.svg#icomoon) format('svg');
+    src: url(fonts/icomoon.eot);
+    src: url(fonts/icomoon.eot?#iefix) format('embedded-opentype'),
+         url(fonts/icomoon.woff) format('woff'),
+         url(fonts/icomoon.ttf) format('truetype'),
+         url(fonts/icomoon.svg#icomoon) format('svg');
     font-weight: normal;
     font-style: normal;
 }
@@ -190,13 +190,13 @@ blockquote {
   width: 100%;
   float:left;
   padding: 2%;
+  z-index: -200;
 }
 
 .mat-card {
-  background: $mat-white;
+  background: white;
   box-shadow: $mat-shadow;
   margin-bottom: 1rem;
-  margin-top:1rem;
   float:left;
   width: 100%;
   @media screen and (min-width: $max-breakpoint){
@@ -369,6 +369,7 @@ input[type="submit"] {
   height:2rem;
   font-size: 1.2rem;
   font-weight: 100;
+  cursor: pointer;
   &:active {
     outline:none;
   }
@@ -481,11 +482,19 @@ Sidebar recent / top posts
   line-height: 1.500rem;
 }
 
+.title-meta-wrap {
+  display: block;
+  width: 100%; 
+  padding: 0 2%;
+  float: left;
+}
 
 .bread-module {
   width: grid-width(2, true);
+  height: 100%;
   float:left;
   position:relative;
+  background: $orange;
 }
 
 .flatbread {
@@ -495,8 +504,6 @@ Sidebar recent / top posts
 }
 
 .likes {
-  position:absolute;
-  top:35%;
   width:100%;
   text-align:center;
   text-decoration: none;
