@@ -21,8 +21,13 @@
 					<li><a href="https://untappd.com/user/valenzuelakyle"><span class="icon icon-untapppd"></span><span><h6>Untapppd<br />valenzuelakyle</h6></span></a></li>
 				</ul>
 			</div>
+				<?php wp_nav_menu(array(
+					'menu'=>'main nav',
+					'container'=> 'div',
+					'container_class' => 'footer-linkage',
+				)); ?>
 			<div class="site-info">
-				@<?php the_time('Y') ?> BakingBrew is a an awesome site built on Wordpress.
+				@<?php the_time('Y') ?> Baking Brew is a an awesome website site written and maintained by Kyle Valenzuela using Wordpress.
 			</div><!-- .site-info --> 
 		</div><!-- .f-wrap --> 
 	</footer><!-- #colophon -->
