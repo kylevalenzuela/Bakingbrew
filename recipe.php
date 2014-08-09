@@ -4,28 +4,33 @@
 	*/
 get_header(); ?>
 
+
+
 <?php while ( have_posts() ) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
 	<header class="entry-header" style="background: url('<?php the_field('headerimage'); ?>') no-repeat center center;">
 		<div class="head-wrapper">
-			<div class="bread-module">
-				<?php include("icons/uE001-flatbread.svg"); ?>
-				<span class="likes"><?php echo getPostLikeLink( get_the_ID() ); ?></span>
-			</div> <!--Bread Module-->
 			<h3 class="entry-title"><?php the_title(); ?></h3>
 		</div>
 	</header>
+
+	<div class="title-meta-wrap">
+		<div class="bread-module">
+			<span class="likes"><?php echo getPostLikeLink( get_the_ID() ); ?></span>
+		</div> <!--Bread Module-->
+	</div>
 
 <div id="content" class="page-wrap">
 
 <div class="two-thirds">
 			<div class="entry-content">
 
-				<?php the_content(); ?>
+				<?php the_content();  ?>
+				<?php share_buttons(); ?>
 			</div><!-- .entry-content -->
 			
-			<section class='mat-card'>
+			<section class='blogroll-item mat-card meta-brew'>
 				<?php meta_brew(); ?>
       		</section>
 
@@ -47,7 +52,8 @@ get_header(); ?>
 				</div>
 				</div>
 				
-
+	
+<?php next_post_slideout(); ?>
 
 	<?php endwhile; // end of the loop. ?>
 
@@ -94,6 +100,6 @@ get_header(); ?>
 		});
 	});
 
-	
+		
 
 </script>
