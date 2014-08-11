@@ -842,6 +842,14 @@ function cellarroll_brew_img_home() {
     echo "'></a></div>";
 }
 
+function cellarroll_brew_img_main() {
+    echo "<div class='cellarroll-item-img-main'><a href='";
+    the_permalink();
+    echo "'><img src='";
+    the_field('cellarrollimg');
+    echo "'></a></div>";
+}
+
 function cellarroll_loop() {
 
     $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
@@ -1071,6 +1079,20 @@ function share_buttons() {
     echo "&amp;body=Post from ";
     print(urlencode(get_permalink()));
     echo "' title='Share by Email'>Email</a></li>";
+    echo "</ul>";
+}
+
+function brewery_meta_info() {
+    echo "<ul class='brewery-meta-info'>";
+    echo "<li><div class='location-svg svg-ico'></div>";
+    the_field('brew-city');
+    echo "</li>";
+    echo "<li><div class='twitter-svg svg-ico'></div><a href='";
+    the_field('brew-twitter');
+    echo "'>Twitter</a></li>";
+    echo "<li><div class='globe-svg svg-ico'></div><a href='";
+    the_field('brew-website');
+    echo"'>Website</a></li>";
     echo "</ul>";
 }
 

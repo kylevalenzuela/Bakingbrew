@@ -9,7 +9,7 @@ get_header(); ?>
 <?php while ( have_posts() ) : the_post(); ?>
 
 <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-	<header class="entry-header" style="background: url('<?php the_field('headerimage'); ?>') no-repeat center center;">
+	<header class="entry-header" style="background-image: url('<?php the_field('headerimage'); ?>')">
 		<div class="head-wrapper">
 			<h3 class="entry-title"><?php the_title(); ?></h3>
 		</div>

@@ -8,112 +8,55 @@
 
 get_header(); ?>
 
+<div class="page-wrap">
+	
 <div class="two-thirds">
+	
+		<div class="mat-card home-blogroll-title">
+			<a href="<?php echo get_permalink(128); ?>"><h1><?php include("icons/wheat-brew.svg"); ?>Bread<?php include("icons/wheat-brew-r.svg"); ?></h1></a>
+			<h5>Recent Recipes</h5>
+		</div>
 
 	<div class="home-top-articles">
-
-		<article class="main-recipe">
-			<div class="main-recipe-img">
-				<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/IMG_20140426_154227.jpg" alt="Feature Article Image">
-			</div>
-			<div class="main-recipe-block">
-				<h5>Lorem Ipsum</h5>
-				<div class="cellar-info-module">Beer | Brewer</div>
-			</div>
-		</article>	
-
+		<?php home_most_recent() ?>
+		
 		<article class="recent-recipe">
-			<div class="recent-recipe-block">
-				<div class="recent-recipe-article">
-					<h5>Bacon ipsum dolor sit amet meatball rump tri-tip</h5>
-					<div class="cellar-info-module">Beer | Brewer</div>
-				</div>
-				<div class="recent-recipe-img">
-					<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/IMG_20140426_154227.jpg" alt="Feature Article Image">
-				</div>
-			</div>
-
-
-			<div class="recent-recipe-block">
-				<div class="recent-recipe-article">
-					<h5>Bacon ipsum dolor sit amet meatball rump tri-tip</h5>
-					<div class="cellar-info-module">Beer | Brewer</div>
-				</div>
-				<div class="recent-recipe-img">
-					<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/IMG_20140426_154227.jpg" alt="Feature Article Image">
-				</div>
-			</div>
-
-			<div class="recent-recipe-block">
-				<div class="recent-recipe-article">
-					<h5>Bacon ipsum dolor sit amet meatball rump tri-tip</h5>
-					<div class="cellar-info-module">Beer | Brewer</div>
-				</div>
-				<div class="recent-recipe-img">
-					<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/IMG_20140426_154227.jpg" alt="Feature Article Image">
-				</div>
-			</div>
+			<?php home_sub_recent(); ?>
 		</article><!--recent-recipe-->
 	</div>
-
-	<div class="home-cellar">
-		<h1>The Cellar</h1>
+	
+	<div class="home-blogroll">
+		<div class="mat-card home-blogroll-title">
+			<a href="<?php echo get_permalink(33); ?>"><h1><?php include("icons/wheat-brew.svg"); ?>Cellar<?php include("icons/wheat-brew-r.svg"); ?></h1></a>
+	    		<h5>Top Breweries</h5>
+			<div class="scroll-border">
+	    		<h3>swipe</h3>
+	    		<div class="scroll-animation"></div>
+	 		</div>
+		</div>
 		
-		<div class="scroll-border">
-	    	<h3>swipe</h3>
-	    	<div class="scroll-animation"></div>
-	 	</div>
+	</div>
+
+	
+
+
 		<div class="home-cellar-outer-container">
 			<div class="home-cellar-container">
-				<div class="home-cellar-carousel" style="background:red;">
+				<div class="home-cellar-carousel">
 
-					<div class="home-cellar-content">
-						<div class="home-cellar-img">
-							<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/bottle.png" alt="">
-						</div>
-						<div class="home-cellar-block">
-							<h2>Red Trolley Ale</h2>
-							<h3>karl Strauss</h3>
-						</div>
-					</div>
-
-					<div class="home-cellar-content">
-						<div class="home-cellar-img">
-							<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/bottle.png" alt="">
-						</div>
-						<div class="home-cellar-block">
-							<h2>Red Trolly Ale</h2>
-							<h3>karl Strauss</h3>
-						</div>
-					</div>
-
-					<div class="home-cellar-content">
-						<div class="home-cellar-img">
-							<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/bottle.png" alt="">
-						</div>
-						<div class="home-cellar-block">
-							<h2>Red Trolly Ale</h2>
-							<h3>karl Strauss</h3>
-						</div>
-					</div>
-
-					<div class="home-cellar-content">
-						<div class="home-cellar-img">
-							<img src="http://www.poop.bakingbrew.com/baked-goods/uploads/2014/05/bottle.png" alt="">
-						</div>
-						<div class="home-cellar-block">
-							<h2>Red Trolly Ale</h2>
-							<h3>karl Strauss</h3>
-						</div>
-					</div>
+					<?php home_cellar_slide(); ?>
 				</div>
 			</div>
 		</div>
-	</div><!--Home Cellar-->
 
-	<article class="beer"> 
+	<div class="home-blogroll">
+		<div class="mat-card home-blogroll-title">
+			<a href="<?php echo get_permalink(128); ?>"><h1><?php include("icons/wheat-brew.svg"); ?>Blog<?php include("icons/wheat-brew-r.svg"); ?></h1></a>
+		</div>
+	</div>
 
-	</article>
+		<?php blogroll_query_frontpage(); blogroll_loop(); ?>
+
 </div><!--two-thirds width-->
 
 

@@ -4,66 +4,81 @@
  *
  * @package Baking Brew
  */
-
 ?>
 	<div id="secondary" class="one-third sidebar" role="complementary">
-	
-		<aside class="coin-wrap">
-			<h2>Bread Tips</h2>
-			<div class="coins">
-				<a href="dogecoin:DMq3PvhUz6b483fZCpxN3gnHXoaC8yEPUT">
-					<div class="dodgecoin-link">
-						<?php include("icons/dodgecoin.svg"); ?>
-						<h3>Dogecoin</h3>	
+		
+		<div class="sidebar-left"> 
+			<aside class="cards ad">
+				<a href="<?php echo get_page_link(55); ?>">
+				<div class="ad-wrap">
+					<div class="bb-ad">
+						<?php include('images/bb-ad.svg'); ?>
 					</div>
-				</a>
-
-		 		<a href="bitcoin:1LccD3KqehoUNX6srKYms1YiVk8q1jFcgR">
-		 			<div  class="bitcoin-link" >
-						<h3>Bitcoin</h3>
-						<?php include("icons/bitcoin.svg"); ?>
-					</div>
-				</a>
-			</div>
-		</aside>
-
-		<aside class="subcribe-wrap">
-
-			<!--START OF REACHMAIL FORM, CUT FROM HERE DOWN-->
-
-			<form name="signup" method="post" onSubmit="return submitIt(this);" action="https://go.reachmail.net/libraries/form_wizard/process_subscribe.asp" >
-			Email address<br />
-			<div class="sub-wrap">
-				<input type="text" id="rm_email" class="reach-email" name="rm_email" />
-				<input type="hidden" name="my_type" value="3" />
-				<input type="hidden" name="form_id" value="8042">
-				<input type="hidden" name="list_name" value="XLIST_9AD53139E02F435593C4CC9A9058DF38">
-				<input type="hidden" name="list_id" value="544351">
-				<input type="hidden" name="el_list" value="email">
-				<input type="hidden" name="page_confirm" value="http://www.poop.bakingbrew.com/the-bread/taco-bell-sucks-your-face-off/">
-				<input type="hidden" name="list_fromname" value="">
-				<input type="hidden" name="list_fromemail" value="">
-				<input type="hidden" name="list_subject" value="">
-				<input class="reach-submit" type="submit" name="Submit" value="Submit" >
-			</div>
-			</form>
-			<!--REACHMAIL FORM ENDS HERE-->
-		</aside>
-
-		<aside class="side-posts">
-			<ul class="sw">
-				<li><a class="side-top-toggle" href="">Top</a></li>
-				<li><a class="side-recent-toggle" href="">Recent</a></li>
-			</ul>
-			<div class="post-list">
-				<div class="side-post-wrap">
-					<?php 
-						jm_most_popular();
-						most_recent_side(); 
-					?>
 				</div>
-			</div>
-		</aside>
+				</a>
+			</aside>
+
+			<aside class="subcribe-wrap cards">
+				<!-- Begin MailChimp Signup Form -->
+				<h4>Recipes By Email</h4>
+				<div id="mc_embed_signup">
+					<form action="//bakingbrew.us8.list-manage.com/subscribe/post?u=263484f9aad05fa6f56173c41&amp;id=0a7ebbee49" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+	
+						<div class="mc-field-group">
+							<input type="email" value="" name="EMAIL" class="reach-email" id="mce-EMAIL">
+						</div>
+						<div id="mce-responses" class="clear">
+							<div class="response" id="mce-error-response" style="display:none"></div>
+							<div class="response" id="mce-success-response" style="display:none"></div>
+						</div>    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+					    <div style="position: absolute; left: -5000px;"><input type="text" name="b_263484f9aad05fa6f56173c41_0a7ebbee49" tabindex="-1" value=""></div>
+					    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+					</form>
+				</div>
+				<!--End mc_embed_signup-->
+			</aside>
+		</div>
+		
+		<div class="sidebar-right">
+			<aside class="coin-wrap">
+				<h4>Bread Tips</h4>
+				<div class="coins">
+					<a href="dogecoin:DCDXrJqbp6GBC4KSFcQyn6dam6UhJgDvuS">
+						<div class="dodgecoin-link">
+							<?php include("icons/dodgecoin.svg"); ?>
+							<h3>Dogecoin</h3>	
+						</div>
+					</a>
+
+			 		<a href="bitcoin:1BfFjYKCntc3WbFeXQPsbhFfYz7fztBXTr">
+			 			<div  class="bitcoin-link" >
+							<h3>Bitcoin</h3>
+							<?php include("icons/bitcoin.svg"); ?>
+						</div>
+					</a>
+				</div>
+			</aside>
+
+			<aside class="side-posts">
+						<h4>More Recipes</h4>
+				
+				<ul class="sw">
+					<li><a class="side-top-toggle" href="">Top</a></li>
+					<li><a class="side-recent-toggle" href="">Recent</a></li>
+				</ul>
+				<div class="post-list">
+
+					<div class="side-post-wrap">
+						<?php 
+							jm_most_popular();
+							most_recent_side(); 
+						?>
+					</div>
+				</div>
+			</aside>
+
+		</div>
+
 		
 	</div><!-- .one-third -->
 
