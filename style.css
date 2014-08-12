@@ -379,14 +379,23 @@ header.site-header {
 
 .logo {
   width: 100%;
-  height: 7rem;
-  max-width: 84.375em; }
+  height: auto;
+  max-width: 84.375em;
+  margin: 0.4rem 0; }
 
-.logo:nth-child(1n), .logo:nth-child(n) {
-  margin-right: 0; }
+.logo-icon {
+  width: 40%;
+  margin: 0 auto;
+  max-width: 15rem; }
 
-.logo:nth-child(1n+1) {
-  clear: left; }
+@media screen and (min-width: 625px) {
+  .logo-icon {
+    width: 30%;
+    float: left; } }
+
+.logo-svg {
+  width: 100%;
+  margin: 0.5rem 0; }
 
 @media screen and (min-width: 960px) {
   .head-wrap {
@@ -400,11 +409,7 @@ header.site-header {
     clear: both; } }
 
 .search-bar {
-  float: left; }
-
-.search-bar:after {
-  content: "";
-  display: table;
+  float: left;
   clear: both; }
 
 @media screen and (min-width: 960px) {
