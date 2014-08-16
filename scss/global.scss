@@ -252,8 +252,9 @@ SIDEBAR
   margin-bottom: 1rem;
   padding: 2%;
   float: right;
-  h2 {
+  h4 {
     text-align:center;
+    color: $grey;
   }
 }
 
@@ -336,6 +337,11 @@ Sidebar Email Subscriptions
   margin-bottom: 1rem;
   padding: 2%;
   float: right;
+  h4 {
+    text-align: center;
+    color: $grey;
+    margin-bottom: .4rem;
+  }
 }
 
 .sub-wrap {
@@ -389,9 +395,14 @@ Sidebar recent / top posts
   padding: 2%;
   margin-bottom:1rem;
   float:left;
+  h4 {
+      color: $grey;
+      text-align: center;
+    }
   .sw{
     padding: 5%;
     @include clearfix();
+
     li{
       list-style:none;
       display: inline-block;

@@ -32,11 +32,30 @@ header.site-header {
 		padding: 0 1%;
 	}
 }
-.logo {
-	@include rowMachine(1, 0);
-	height: 7rem;
+.logo, .touch .logo {
+	width: 100%;
+	height: auto;
 	max-width: $high-end;
+	margin: .4rem 0;
+	float: left;
+	
 }
+.logo-icon, .touch .logo-icon {
+	width: 40%;
+	margin: 0 auto;
+	max-width: 15rem;
+	@media screen and (min-width:625px){
+		width: 30%;
+		float: left;
+	}
+}
+
+.logo-svg, .logo .logo-svg {
+	width: 100%;
+	height: 100%;
+	background: url(icons/bakingbrewlogo.svg) no-repeat;
+}
+
 
 .head-wrap {
 	@media screen and (min-width: $max-breakpoint){
@@ -50,7 +69,7 @@ header.site-header {
 
 .search-bar {
 	float:left;
-	@include clearfix();
+	clear: both;
 
 	@media screen and (min-width:$max-breakpoint){
  		padding-top: 4%;
@@ -84,19 +103,14 @@ nav.navigation {
 
 		&:hover .wheat-rotate,
 		&:active .wheat-rotate {
-			-webkit-animation-delay: 0;
-		    -webkit-animation-duration: .7s;
-		    -webkit-animation-name: wheat-animation;
-		    -webkit-animation-fill-mode: forwards;
-		    @include vendor-prefix(animation, wheat-animation .7s forwards);
+			
+		    @include vendor-prefix(animation, wheat-animation .7s linear 0s forwards normal);
 		}
 		
 		&:hover .wheat-rotate-r, 
 		&:active .wheat-rotate-r {
-			-webkit-animation-delay: 0;
-		    -webkit-animation-duration: .7s;
-		    -webkit-animation-name: wheat-animation-r;
-		    -webkit-animation-fill-mode: forwards;
+			
+		    @include vendor-prefix(animation, wheat-animation-r .7s linear 0s forwards normal);
 		}
 		
 		h4 {
@@ -146,6 +160,28 @@ nav.navigation {
 	}
 }
 
+.head-ad-wrap {
+	top: 0;
+	right: 0;
+	float: right; 
+	width: 70%;
+	height: auto;
+	display: none;
+	margin-top: 2rem;
+	margin-right: .5rem;
+	@include vendor-prefix(animation, addrop .9s cubic-bezier(.94,-0.48,.19,1.66) 2s forwards);
+	@media screen and (min-width:625px){
+		display: inline-block;
+	}
+	h4 {
+		display: inline-block;
+		margin-left: 1rem;
+		float: right; 
+		width: 100%;
+		height: auto;
+	}
+}
+
 /************************
 HOME PAGE
 ************************/
@@ -175,6 +211,9 @@ Main Article
 	width:inherit;
 	height:auto;
 	position:relative;
+	img {
+		width: 100%;
+	}
 }
 	
 .main-recipe-block {
@@ -345,7 +384,7 @@ Cellar slider
 
 .home-cellar {
 	box-shadow: $mat-shadow;
-	background: $mat-white;
+	background: white;
 	float: left;
 	padding: 2% 0;
 
@@ -409,21 +448,25 @@ Scroll Animation
 .home-cellar-outer-container {
 	width:100%;
 	max-width: 400%;
-	background: $mat-white;
+	background: white;
 	margin-bottom: 1rem;
 	float: left;
 	box-shadow: $mat-shadow;
 	@media screen and (min-width: 650px) {
 		max-width: 100%;
+		background: white;
 	}
 }
 
 .home-cellar-container {
 	width:100%;
-	overflow-x: scroll;
+	overflow-x: auto;
 	overflow-y: hidden;
 	-webkit-overflow-scrolling: touch;
 	background: white;
+	@media screen and (min-width: 650px) {
+		overflow-x: hidden;
+	}
 }
 
 .home-cellar-carousel {
@@ -446,6 +489,7 @@ Scroll Animation
 	@include clearfix();
 	@media screen and (min-width: 650px) {
 		@include rowMachine(2, 2%);
+
 	}
 }
 
@@ -513,7 +557,8 @@ RECIPES
   padding:5%;
   @include clearfix();
   background-size:cover!important;
-  background-attachment: scroll;
+  background-repeat: no-repeat;
+  background-position: bottom!important;
   background-attachment: fixed!important;
   border-bottom: $orange 4px solid;
 
@@ -528,7 +573,31 @@ RECIPES
   	background-position: top left!important;
   	background-size: 100%!important;
   }
+}
 
+.touch .entry-header{
+	max-width:none;
+	width:100%;
+	height: 10rem;
+	margin: 0 auto;
+	padding:5%;
+	@include clearfix();
+	background-size:cover!important;
+	background-attachment: relative!important;
+	background-repeat: no-repeat;
+  	background-position: center center!important;
+	border-bottom: $orange 4px solid;
+	overflow: hidden;
+	@media screen and (min-width:600px){
+		background-position: top left!important;
+		background-size:99%!important;
+	}
+
+	@media screen and (min-width:$max-breakpoint){
+		padding:2%;
+		background-position: top left!important;
+  		background-size: 100%!important;
+	}
 }
 
 .head-wrapper {
@@ -563,6 +632,15 @@ RECIPES
 		vertical-align: middle;
 	}
 }
+.entry-brew-title-cellar {
+	h1 {
+		text-align: center;
+		font-size: 1.8rem;
+		@media screen and (min-width: 600px){
+			font-size:2.625rem;
+		}
+	}
+}
 
 // Main Content 
 .entry-content {
@@ -570,7 +648,16 @@ RECIPES
 	background: white;
 	box-shadow: $mat-shadow;
 	margin-bottom:1rem;
-	float:left;
+	clear: both;
+	h3 {
+		margin: .5rem 0;
+	}
+	h4 {
+		margin: .5rem 0;
+	}
+	strong {
+		font-weight: 400;
+	}
 	li {
   		font-size:1.250rem;
  		color: $grey;
@@ -699,6 +786,9 @@ SINGLE BLOG POST
 
 .entry-header-blog {
 	float: left;
+	h2 {
+		text-align: center;
+	}
 }
 
 .hwb2 {
@@ -724,8 +814,12 @@ SINGLE BLOG POST
 
 
 .time-stamp{
-	font-size: 1.4rem;
+	font-size: 1.2rem;
 	color: $grey;
+	text-align: center;
+	time {
+		color: $grey;
+	}
 }
 
 
@@ -1234,6 +1328,19 @@ i {
 		margin: 0 auto;
 	}
 }
+
+.cellarroll-item-img-main {
+	display: block;
+	margin: 0 auto;
+	margin-bottom: 1rem;
+	max-width: 320px;
+	img {
+		max-width: 100%;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+
 .cellarroll-item-content {
 	@media screen and (min-width: 650px){
 		width: grid-width(9);
@@ -1273,6 +1380,45 @@ i {
 .meta-brew-title {
 	margin-bottom: 1rem;
 }
+
+.brewery-meta-info {
+	text-align: center;
+	li {
+		list-style: none;
+		display: inline-block;
+		color: $grey;
+		margin-right: 1rem;
+		line-height: 1rem;
+		vertical-align: middle;
+		
+	}
+	a {
+		color: $grey;
+		&:hover {
+			color: $orange;
+		}
+	}
+}
+
+.svg-ico{
+	
+	width: 1.2rem;
+	height: 1.2rem;
+	display: inline-block;
+	line-height: 1rem;
+	vertical-align: middle;
+	margin-right: .5rem;
+}
+.location-svg {
+background: url(icons/location.svg) no-repeat;
+}
+.twitter-svg {
+	background: url(icons/twitter-o.svg) no-repeat;
+}
+.globe-svg {
+	background: url(icons/globe.svg) no-repeat;
+}
+
 
 @import 'media';
 
