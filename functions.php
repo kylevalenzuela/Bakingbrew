@@ -713,7 +713,7 @@ function home_most_recent() {
     echo "<source srcset='";
     the_field('home_main_big');
     echo "'";
-    echo "media='(min-width: 800px)'>";
+    echo "media='(min-width: 625px)'>";
     echo "<img srcset='"; 
     the_field('home_main_small'); 
     echo "'></picture></div></a>";
